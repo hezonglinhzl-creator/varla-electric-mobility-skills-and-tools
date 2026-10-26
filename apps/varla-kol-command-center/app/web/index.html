@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="zh-CN" data-app-id="varla-kol-command-center">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Varla KOL 总控台</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+  <script src="/assets/task_safety.js" defer></script>
+  <script src="/assets/task_display.js" defer></script>
+  <script src="/assets/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳到主要内容</a>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="主导航">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">V</div>
+        <div>
+          <p class="eyebrow">VARLA OPS / LOCAL</p>
+          <h1>Varla KOL 总控台</h1>
+        </div>
+      </div>
+      <nav class="primary-nav">
+        <button class="nav-item is-active" type="button" data-view="overview" aria-current="page">
+          <span aria-hidden="true">01</span><b>总览</b>
+        </button>
+        <button class="nav-item" type="button" data-view="manual">
+          <span aria-hidden="true">02</span><b>人工处理</b><em id="manual-count">—</em>
+        </button>
+        <button class="nav-item" type="button" data-view="sent">
+          <span aria-hidden="true">03</span><b>已发送</b><em id="sent-count">—</em>
+        </button>
+        <button class="nav-item" type="button" data-view="kol">
+          <span aria-hidden="true">04</span><b>KOL</b>
+        </button>
+        <button class="nav-item" type="button" data-view="junk">
+          <span aria-hidden="true">05</span><b>垃圾清理</b>
+        </button>
+        <button class="nav-item" type="button" data-view="reply-assistant">
+          <span aria-hidden="true">06</span><b>KOL 回复助手</b>
+        </button>
+        <button class="nav-item" type="button" data-view="knowledge">
+          <span aria-hidden="true">07</span><b>知识与同步</b>
+        </button>
+        <button class="nav-item" type="button" data-view="settings">
+          <span aria-hidden="true">08</span><b>系统设置</b>
+        </button>
+        <button class="nav-item" type="button" data-view="audit">
+          <span aria-hidden="true">09</span><b>审计记录</b>
+        </button>
+      </nav>
+      <div class="sidebar-note">
+        <span class="status-dot status-dot--safe" aria-hidden="true"></span>
+        <p><strong>人工确认模式</strong><br>不会自动回复或转发</p>
+      </div>
+    </aside>
+
+    <main id="main-content" tabindex="-1">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">OPERATIONS CONTROL TOWER</p>
+          <h2 id="view-title">今日运营总览</h2>
+        </div>
+        <div class="system-clock">
+          <span>本地时间</span>
+          <strong id="local-clock">--:--</strong>
+        </div>
+      </header>
+
+      <section class="service-strip" aria-label="服务状态">
+        <article class="service-status service-status--clickable" data-service="gmail" data-service-url="https://mail.google.com/mail/u/0/#inbox" role="link" tabindex="0" aria-label="打开 Gmail 收件箱">
+          <span class="status-dot status-dot--unknown"></span>
+          <div><small>通信入口</small><strong>Gmail</strong></div>
+          <em>待自检</em>
+        </article>
+        <article class="service-status service-status--clickable" data-service="feishu" data-service-url="https://m9kzgsiucj.feishu.cn/wiki/Oo35w9AWgiy0m2kEB5jcUeC6nI3" role="link" tabindex="0" aria-label="打开飞书 KOL 知识库">
+          <span class="status-dot status-dot--unknown"></span>
+          <div><small>知识同步</small><strong>飞书</strong></div>
+          <em>待同步</em>
+        </article>
+        <article class="service-status service-status--clickable" data-service="database" data-local-target="database" role="button" tabindex="0" aria-label="在文件夹中查看本地数据库">
+          <span class="status-dot status-dot--unknown"></span>
+          <div><small>本地主库</small><strong>本地数据库</strong></div>
+          <em>检查中</em>
+        </article>
+        <article class="service-status service-status--clickable" data-service="reply" data-local-target="reply" role="button" tabindex="0" aria-label="打开回复助手文件夹">
+          <span class="status-dot status-dot--unknown"></span>
+          <div><small>内容生产</small><strong>回复助手</strong></div>
+          <em>待自检</em>
+        </article>
+        <article class="service-status service-status--clickable" data-service="contract" data-local-target="contract" role="button" tabindex="0" aria-label="打开合同更新器文件夹">
+          <span class="status-dot status-dot--unknown"></span>
+          <div><small>合同工具</small><strong>合同更新器</strong></div>
+          <em>待自检</em>
+        </article>
+      </section>
+
+      <section class="control-rack" aria-labelledby="control-title">
+        <div>
+          <p class="eyebrow">MANUAL DISPATCH</p>
+          <h3 id="control-title">总控按钮</h3>
+          <p>每个动作都由你点击触发；确认回复后在后台执行，成功后归入“已发送”。</p>
+        </div>
+        <div class="control-actions">
+          <button class="button button--primary" id="recognize-button" type="button">
+            <span aria-hidden="true">▶</span> 开始识别
+          </button>
+          <button class="button" id="sync-button" type="button">立即同步飞书</button>
+          <button class="button" id="health-button" type="button">重新检查外部服务</button>
+          <button class="button" id="health-accept-button" type="button">验证并接受组件更新</button>
+          <button class="button button--danger-quiet" id="pause-button" type="button">全部暂停</button>
+        </div>
+      </section>
+
+      <section class="view-panel" data-panel="manual">
+        <div class="section-heading">
+          <div><p class="eyebrow">MANUAL PROCESSING</p><h3>人工处理</h3></div>
+          <button class="button" type="button" data-refresh-list="manual">刷新</button>
+        </div>
+        <p class="section-note">点击任务上的“人工处理”后，只移动该封邮件到这里，不影响其他任务。</p>
+        <div id="manual-list" class="task-list"></div>
+      </section>
+
+      <section class="view-panel" data-panel="sent">
+        <div class="section-heading">
+          <div><p class="eyebrow">SENT HISTORY</p><h3>已发送</h3></div>
+          <button class="button" type="button" data-refresh-list="sent">刷新</button>
+        </div>
+        <p class="section-note">发送完成的任务只在这里保留；同一邮件线程收到对方新回复后，会生成新的待处理任务。</p>
+        <div id="sent-list" class="task-list"></div>
+      </section>
+
+      <div id="global-message" class="message" role="status" aria-live="polite" hidden></div>
+
+      <section class="view-panel is-active" data-panel="overview">
+        <div class="overview-grid">
+          <section class="task-board" aria-labelledby="tasks-title">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">INBOX QUEUE</p>
+                <h3 id="tasks-title">待确认任务</h3>
+              </div>
+              <button class="text-button" id="refresh-button" type="button">刷新列表</button>
+            </div>
+            <div class="queue-summary" aria-label="任务分类汇总">
+              <button type="button" data-group-filter="kol" aria-pressed="false"><b id="count-kol">0</b>KOL 合作</button>
+              <button type="button" data-group-filter="pre-sales" aria-pressed="false"><b id="count-pre">0</b>售前</button>
+              <button type="button" data-group-filter="order-logistics" aria-pressed="false"><b id="count-order">0</b>订单物流</button>
+              <button type="button" data-group-filter="after-sales" aria-pressed="false"><b id="count-after">0</b>售后</button>
+            </div>
+            <div id="task-list" class="task-list" aria-live="polite"></div>
+          </section>
+
+          <aside class="issue-board" aria-labelledby="risk-title">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">SAFETY CHECKLIST</p>
+                <h3 id="risk-title">预想问题与处理</h3>
+              </div>
+            </div>
+            <ol class="risk-checklist">
+              <li>
+                <span class="risk-code">R01</span>
+                <div><strong>邮件内容已变化</strong><p>确认前重新读取线程，版本不一致立即停止。</p></div>
+                <button type="button" data-risk-action="refresh">刷新任务</button>
+              </li>
+              <li>
+                <span class="risk-code">R02</span>
+                <div><strong>知识依据不足</strong><p>不猜价格、库存、佣金或保修承诺。</p></div>
+                <button type="button" data-risk-action="knowledge">查看知识</button>
+              </li>
+              <li>
+                <span class="risk-code risk-code--red">R03</span>
+                <div><strong>高风险或分类冲突</strong><p>禁用发送，交给人工复核。</p></div>
+                <button type="button" data-risk-action="issues">打开待处理</button>
+              </li>
+              <li>
+                <span class="risk-code">R04</span>
+                <div><strong>转发地址错误</strong><p>仅显示系统固定部门邮箱，不接受手工收件人。</p></div>
+                <button type="button" data-risk-action="routes">核对路由</button>
+              </li>
+              <li>
+                <span class="risk-code">R05</span>
+                <div><strong>重复点击或重复发送</strong><p>执行中锁定按钮，并由后端幂等保护。</p></div>
+                <button type="button" data-risk-action="audit">查看审计</button>
+              </li>
+              <li>
+                <span class="risk-code">R06</span>
+                <div><strong>飞书暂不可用</strong><p>继续使用本地知识库，72 小时节流同步。</p></div>
+                <button type="button" data-risk-action="sync">检查同步</button>
+              </li>
+            </ol>
+          </aside>
+        </div>
+      </section>
+
+      <section class="view-panel" data-panel="issues">
+        <div class="section-heading">
+          <div><p class="eyebrow">EXCEPTION QUEUE</p><h3>待处理问题</h3></div>
+          <button class="button" type="button" data-refresh-list="issues">刷新</button>
+        </div>
+        <div id="issue-list" class="task-list"></div>
+      </section>
+
+      <section class="view-panel" data-panel="kol">
+        <div class="section-heading">
+          <div><p class="eyebrow">PARTNERSHIP DESK</p><h3>KOL 合作组</h3></div>
+          <button class="button" type="button" data-refresh-list="kol">刷新</button>
+        </div>
+        <div id="kol-list" class="task-list"></div>
+      </section>
+
+      <section class="view-panel" data-panel="reply-assistant">
+        <div class="section-heading">
+          <div><p class="eyebrow">KOL REPLY ASSISTANT</p><h3>KOL 回复助手</h3></div>
+          <button class="button" id="reply-assistant-open" type="button">打开回复助手文件夹</button>
+        </div>
+        <div class="info-grid reply-assistant-rules">
+          <article><span class="signal signal--green">DB + AI</span><h4>上下文优先</h4><p>先读取对方最新消息、同线程上下文和本地数据库，再生成对应回复；不会自动发送。</p></article>
+          <article><span class="signal signal--amber">4 VIDEO</span><h4>至少 4 个视频</h4><p>当前 KOL 合作要求最少 4 个视频。Stories 不自动按视频数量计算。</p></article>
+          <article><span class="signal">TWO-WAY</span><h4>双向选择</h4><p>这是目前的合作方式，也是双方互相选择的过程；回复中会礼貌说明并希望对方理解。</p></article>
+          <article><span class="signal signal--green">3–5 DAYS</span><h4>到货时间</h4><p>发货通常在合作确认后 1–3 天安排；收到快递单号后通常 3–5 天到货，具体取决于承运商和目的地。</p></article>
+        </div>
+      </section>
+
+      <section class="view-panel" data-panel="junk">
+        <div class="section-heading">
+          <div><p class="eyebrow">RECOVERABLE CLEANUP</p><h3>垃圾清理</h3></div>
+        </div>
+        <div class="settings-card">
+          <p class="section-note">仅处理明确的 SEO、外链、客座文章、Shopify 或电商营销广告。邮件会移入 Gmail 可恢复的垃圾箱，并拉黑精确发件人；KOL、经销商、卖车合作和模糊邮件会保留。</p>
+          <button class="button button--primary" id="junk-cleanup-button" type="button">扫描并移入垃圾箱</button>
+          <dl class="junk-cleanup-results" aria-live="polite">
+            <div><dt>明确广告匹配</dt><dd id="junk-checked">—</dd></div>
+            <div><dt>已移入垃圾箱</dt><dd id="junk-auto-trashed">—</dd></div>
+            <div><dt>模糊邮件保留</dt><dd id="junk-ambiguous-kept">—</dd></div>
+            <div><dt>处理失败</dt><dd id="junk-trash-failed">—</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="view-panel" data-panel="knowledge">
+        <div class="section-heading">
+          <div><p class="eyebrow">KNOWLEDGE CONTROL</p><h3>知识与同步</h3></div>
+        </div>
+        <div class="info-grid">
+          <article><span class="signal signal--green">LOCAL</span><h4>本地知识库</h4><p>本地主库优先。即使飞书断开，已验证的知识仍可检索。</p></article>
+          <article><span class="signal signal--amber">72H</span><h4>飞书节流</h4><p>常规同步每 72 小时检查一次；“立即同步飞书”是人工强制检查。</p></article>
+          <article><span class="signal signal--red">STOP</span><h4>依据冲突</h4><p>版本冲突、来源缺失或事实无法验证时，自动停止发送。</p></article>
+          <article><span class="signal">ROUTE</span><h4>固定部门路由</h4><p>售前与订单：support@varlascooter.com<br>售后：customer@varlascooter.com</p></article>
+        </div>
+      </section>
+
+      <section class="view-panel" data-panel="settings">
+        <div class="section-heading">
+          <div><p class="eyebrow">LOCAL SAFETY</p><h3>系统设置</h3></div>
+        </div>
+        <div class="settings-card">
+          <dl>
+            <div><dt>运行方式</dt><dd>仅本机 127.0.0.1</dd></div>
+            <div><dt>执行模式</dt><dd>人工点击确认</dd></div>
+            <div><dt>自动发送</dt><dd class="danger-text">永久关闭</dd></div>
+            <div><dt>收件人来源</dt><dd>后端固定路由或原邮件线程</dd></div>
+          </dl>
+          <div class="action-catalog" aria-label="可用人工操作">
+            <span>生成并预览</span>
+            <span>保存修改</span>
+            <span>放弃修改</span>
+            <span>重新分类</span>
+            <span>确认 KOL 标签</span>
+            <span>确认回复</span>
+            <span>确认转发</span>
+            <span>忽略</span>
+            <span>人工处理</span>
+          </div>
+          <p>暂停后，识别、同步、标签、回复与转发全部锁定；自检和只读查看仍可使用。</p>
+        </div>
+      </section>
+
+      <section class="view-panel" data-panel="audit">
+        <div class="section-heading">
+          <div><p class="eyebrow">AUDIT TRAIL</p><h3>审计记录</h3></div>
+          <button class="button" id="audit-refresh-button" type="button">刷新</button>
+        </div>
+        <div class="audit-table-wrap">
+          <table>
+            <thead><tr><th>时间</th><th>动作</th><th>操作者</th><th>任务</th><th>结果</th></tr></thead>
+            <tbody id="audit-list"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <dialog id="confirm-dialog" aria-labelledby="confirm-title" aria-describedby="confirm-description">
+    <form method="dialog" class="dialog-shell">
+      <div class="dialog-header">
+        <div><p class="eyebrow">FINAL CHECK / 第二次确认</p><h3 id="confirm-title">确认执行</h3></div>
+        <button class="icon-button" value="cancel" aria-label="关闭确认窗口">×</button>
+      </div>
+      <p id="confirm-description">请逐项核对。系统只会使用后台保存的任务和固定路由，不读取自由输入的收件人。</p>
+      <dl class="confirmation-sheet">
+        <div><dt>固定发件账号</dt><dd data-confirm-sender>info@varlascooter.com</dd></div>
+        <div><dt data-confirm-recipient-label>回复对象</dt><dd data-confirm-recipient>—</dd></div>
+        <div><dt>知识版本</dt><dd data-confirm-knowledge>—</dd></div>
+        <div><dt>预览校验值</dt><dd data-confirm-hash>—</dd></div>
+        <div class="confirmation-content"><dt>将要执行的完整内容</dt><dd><pre data-confirm-content>—</pre></dd></div>
+        <div><dt>风险提示</dt><dd data-confirm-warnings>—</dd></div>
+      </dl>
+      <p class="confirmation-error" data-confirm-error role="alert" hidden></p>
+      <div class="dialog-actions">
+        <button class="button" value="cancel">返回检查</button>
+        <button class="button button--danger" id="final-confirm-button" type="button">我已核对，确认执行</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="classification-dialog" aria-labelledby="classification-title">
+    <form method="dialog" class="dialog-shell" id="classification-form">
+      <div class="dialog-header">
+        <div><p class="eyebrow">ROUTE OVERRIDE</p><h3 id="classification-title">重新分类</h3></div>
+        <button class="icon-button" value="cancel" aria-label="关闭分类窗口">×</button>
+      </div>
+      <label>目标分组
+        <select id="classification-group" required>
+          <option value="kol">KOL 合作</option>
+          <option value="pre-sales">售前</option>
+          <option value="order-logistics">订单物流</option>
+          <option value="after-sales">售后</option>
+          <option value="manual">人工处理</option>
+        </select>
+      </label>
+      <label>调整原因
+        <textarea id="classification-reason" maxlength="500" required>人工复核后调整分类</textarea>
+      </label>
+      <div class="dialog-actions">
+        <button class="button" value="cancel">取消</button>
+        <button class="button button--primary" id="classification-submit" type="submit">保存分类</button>
+      </div>
+    </form>
+  </dialog>
+</body>
+</html>

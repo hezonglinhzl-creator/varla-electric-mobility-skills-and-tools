@@ -1,0 +1,49 @@
+{
+  "manifest_version": 3,
+  "name": "Varla KOL Reply Assistant",
+  "version": "0.2.0",
+  "description": "Floating Chrome assistant for Varla KOL replies. Generates 4 local reply options and ChatGPT bridge prompts.",
+  "action": {
+    "default_title": "Open Varla KOL Reply"
+  },
+  "background": {
+    "service_worker": "serviceWorker.js"
+  },
+  "permissions": ["activeTab", "scripting", "storage", "clipboardWrite", "clipboardRead"],
+  "host_permissions": [
+    "https://www.instagram.com/*",
+    "https://www.tiktok.com/*",
+    "https://business.facebook.com/*",
+    "https://mail.google.com/*",
+    "https://gmail.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.instagram.com/*",
+        "https://www.tiktok.com/*",
+        "https://business.facebook.com/*",
+        "https://mail.google.com/*",
+        "https://gmail.com/*"
+      ],
+      "js": ["contentScript.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "vendor/tesseract.js/dist/*",
+        "vendor/tesseract-core/*",
+        "vendor/tessdata/*"
+      ],
+      "matches": [
+        "https://www.instagram.com/*",
+        "https://www.tiktok.com/*",
+        "https://business.facebook.com/*",
+        "https://mail.google.com/*",
+        "https://gmail.com/*"
+      ]
+    }
+  ]
+}

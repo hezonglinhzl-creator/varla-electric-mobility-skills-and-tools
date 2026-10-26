@@ -1,0 +1,4 @@
+interface:
+  display_name: "Varla Weekly Report"
+  short_description: "Varla TK/Ins/FB weekly Feishu table reports."
+  default_prompt: "Use $varla-weekly-report to update this week Varla TK/Ins/FB/red influencer data as one Feishu-native weekly table."

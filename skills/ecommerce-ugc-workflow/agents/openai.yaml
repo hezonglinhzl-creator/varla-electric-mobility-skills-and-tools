@@ -1,0 +1,6 @@
+interface:
+  display_name: "电商 UGC 流程 Skill"
+  short_description: "生成电商UGC人物资产、分镜、视频提示词与发布文案"
+  default_prompt: "Use $ecommerce-ugc-workflow to create a complete ecommerce UGC production package from my product assets and story direction."
+policy:
+  allow_implicit_invocation: true

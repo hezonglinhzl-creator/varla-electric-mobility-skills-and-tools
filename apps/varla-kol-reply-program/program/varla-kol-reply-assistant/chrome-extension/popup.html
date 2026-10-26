@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Varla KOL Reply</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="popup">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Varla Marketing</p>
+          <h1>KOL Reply Assistant</h1>
+        </div>
+        <button id="readPage" class="icon-button" title="读取网页选中文本">Read</button>
+      </header>
+
+      <section class="surface">
+        <div class="platform-row">
+          <button class="pill active" data-target="platform" data-value="unknown">Unknown</button>
+          <button class="pill" data-target="platform" data-value="instagram">Instagram</button>
+          <button class="pill" data-target="platform" data-value="tiktok">TikTok</button>
+          <button class="pill" data-target="platform" data-value="meta_business">Meta</button>
+          <button class="pill" data-target="platform" data-value="gmail">Gmail</button>
+        </div>
+        <input id="platform" type="hidden" value="unknown" />
+
+        <textarea id="conversation" placeholder="选中网页文字后点 Read，或把 KOL 消息粘贴在这里"></textarea>
+
+        <div class="meta-grid">
+          <label>Creator <input id="creatorName" placeholder="optional" /></label>
+          <label>Email <input id="creatorEmail" placeholder="auto detect" /></label>
+        </div>
+
+        <label>Stage
+          <select id="stage"></select>
+        </label>
+
+        <div class="choice-title">Tone</div>
+        <div class="tone-grid">
+          <button class="pill active" data-target="tone" data-value="casual">自然</button>
+          <button class="pill" data-target="tone" data-value="formal">正式</button>
+          <button class="pill" data-target="tone" data-value="short">简短</button>
+          <button class="pill" data-target="tone" data-value="semi_formal">半正式</button>
+        </div>
+        <input id="tone" type="hidden" value="casual" />
+
+        <div class="choice-title">Product</div>
+        <div class="product-grid">
+          <button class="pill active" data-target="product" data-value="Auto">Auto</button>
+          <button class="pill" data-target="product" data-value="M5S">M5S</button>
+          <button class="pill" data-target="product" data-value="M7S">M7S</button>
+          <button class="pill" data-target="product" data-value="Other">Other</button>
+        </div>
+        <input id="product" type="hidden" value="Auto" />
+
+        <div class="action-row">
+          <button id="detectStage" class="secondary">Detect</button>
+          <button id="generateReplies">Generate 4 Replies</button>
+        </div>
+        <p id="detectedMeta" class="helper">Paste or read text to start.</p>
+      </section>
+
+      <section id="replyOutput" class="reply-stack"></section>
+
+      <details class="surface bridge">
+        <summary>ChatGPT Bridge</summary>
+        <button id="generatePrompt" class="secondary full">Generate Prompt</button>
+        <textarea id="promptPreview" class="prompt" placeholder="Prompt preview"></textarea>
+        <div class="action-row">
+          <button id="copyPrompt" class="secondary">Copy Prompt</button>
+          <button id="openChatGPT" class="secondary">Open ChatGPT</button>
+        </div>
+      </details>
+
+      <details class="surface settings">
+        <summary>Settings</summary>
+        <label>ChatGPT URL <input id="chatgptUrl" /></label>
+        <label>Commission <input id="commission" /></label>
+        <label>Validity <input id="commissionValidity" /></label>
+        <button id="saveSettings" class="secondary full">Save Settings</button>
+      </details>
+    </main>
+    <div id="toast" class="toast"></div>
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Varla KOL 总控"
+  short_description: "Varla KOL 本地分类审核回复转发合同与飞书知识同步总控台"
+  default_prompt: "Use $varla-kol-command-center to open and check the local Varla KOL command center."

@@ -1,0 +1,11 @@
+interface:
+  display_name: "eMoto Hotspot Agent"
+  short_description: "Scan, judge, and plan e-moto trend content"
+  icon_small: "./assets/hotspot-agent-icon.svg"
+  icon_large: "./assets/hotspot-agent-icon.svg"
+  brand_color: "#0F9CA8"
+  default_prompt: "Use $emoto-hotspot-agent to find today's US short-form trends and judge which ones fit an electric dirt bike brand."
+
+policy:
+  allow_implicit_invocation: true
+

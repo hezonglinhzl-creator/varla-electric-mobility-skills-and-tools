@@ -1,0 +1,142 @@
+- generic [active] [ref=e1]:
+  - link "跳到主要内容" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - generic [ref=e3]:
+    - complementary "主导航" [ref=e4]:
+      - generic [ref=e5]:
+        - generic [ref=e6]: V
+        - generic [ref=e7]:
+          - paragraph [ref=e8]: VARLA OPS / LOCAL
+          - heading "Varla KOL 总控台" [level=1] [ref=e9]
+      - navigation [ref=e10]:
+        - button "总览" [ref=e11] [cursor=pointer]:
+          - generic [ref=e12]: "01"
+        - button "人工处理 —" [ref=e14] [cursor=pointer]:
+          - generic [ref=e15]: "02"
+          - generic [ref=e16]: 人工处理
+          - emphasis [ref=e17]: —
+        - button "已发送 —" [ref=e18] [cursor=pointer]:
+          - generic [ref=e19]: "03"
+          - generic [ref=e20]: 已发送
+          - emphasis [ref=e21]: —
+        - button "KOL" [ref=e22] [cursor=pointer]:
+          - generic [ref=e23]: "04"
+        - button "垃圾清理" [ref=e25] [cursor=pointer]:
+          - generic [ref=e26]: "05"
+        - button "KOL 回复助手" [ref=e28] [cursor=pointer]:
+          - generic [ref=e29]: "05"
+        - button "知识与同步" [ref=e31] [cursor=pointer]:
+          - generic [ref=e32]: "06"
+        - button "系统设置" [ref=e34] [cursor=pointer]:
+          - generic [ref=e35]: "07"
+        - button "审计记录" [ref=e37] [cursor=pointer]:
+          - generic [ref=e38]: "08"
+      - paragraph [ref=e42]:
+        - strong [ref=e43]: 人工确认模式
+        - text: 不会自动回复或转发
+    - main [ref=e44]:
+      - generic [ref=e45]:
+        - generic [ref=e46]:
+          - paragraph [ref=e47]: OPERATIONS CONTROL TOWER
+          - heading "今日运营总览" [level=2] [ref=e48]
+        - generic [ref=e49]:
+          - generic [ref=e50]: 本地时间
+          - strong [ref=e51]: 14:36:56
+      - region "服务状态" [ref=e52]:
+        - link "打开 Gmail 收件箱" [ref=e53] [cursor=pointer]:
+          - generic [ref=e55]:
+            - text: 通信入口
+            - strong [ref=e56]: Gmail
+          - emphasis [ref=e57]: 待自检
+        - link "打开飞书 KOL 知识库" [ref=e58] [cursor=pointer]:
+          - generic [ref=e60]:
+            - text: 知识同步
+            - strong [ref=e61]: 飞书
+          - emphasis [ref=e62]: 待同步
+        - button "在文件夹中查看本地数据库" [ref=e63] [cursor=pointer]:
+          - generic [ref=e65]:
+            - text: 本地主库
+            - strong [ref=e66]: 本地数据库
+          - emphasis [ref=e67]: 本地可用
+        - button "打开回复助手文件夹" [ref=e68] [cursor=pointer]:
+          - generic [ref=e70]:
+            - text: 内容生产
+            - strong [ref=e71]: 回复助手
+          - emphasis [ref=e72]: 待自检
+        - button "打开合同更新器文件夹" [ref=e73] [cursor=pointer]:
+          - generic [ref=e75]:
+            - text: 合同工具
+            - strong [ref=e76]: 合同更新器
+          - emphasis [ref=e77]: 待自检
+      - region [ref=e78]:
+        - generic [ref=e79]:
+          - paragraph [ref=e80]: MANUAL DISPATCH
+          - heading "总控按钮" [level=3] [ref=e81]
+          - paragraph [ref=e82]: 每个动作都由你点击触发；确认回复后在后台执行，成功后归入“已发送”。
+        - generic [ref=e83]:
+          - button "开始识别" [ref=e84] [cursor=pointer]: ▶ 开始识别
+          - button "立即同步飞书" [ref=e85] [cursor=pointer]
+          - button "重新检查外部服务" [ref=e86] [cursor=pointer]
+          - button "验证并接受组件更新" [ref=e87] [cursor=pointer]
+          - button "全部暂停" [ref=e88] [cursor=pointer]
+      - generic [ref=e90]:
+        - region [ref=e91]:
+          - generic [ref=e92]:
+            - generic [ref=e93]:
+              - paragraph [ref=e94]: INBOX QUEUE
+              - heading "待确认任务" [level=3] [ref=e95]
+            - button "刷新列表" [ref=e96] [cursor=pointer]
+          - generic "任务分类汇总" [ref=e97]:
+            - button "0 KOL 合作" [ref=e98] [cursor=pointer]:
+              - generic [ref=e99]: "0"
+              - text: KOL 合作
+            - button "0 售前" [ref=e100] [cursor=pointer]:
+              - generic [ref=e101]: "0"
+              - text: 售前
+            - button "0 订单物流" [ref=e102] [cursor=pointer]:
+              - generic [ref=e103]: "0"
+              - text: 订单物流
+            - button "0 售后" [ref=e104] [cursor=pointer]:
+              - generic [ref=e105]: "0"
+              - text: 售后
+        - complementary [ref=e106]:
+          - generic [ref=e108]:
+            - paragraph [ref=e109]: SAFETY CHECKLIST
+            - heading "预想问题与处理" [level=3] [ref=e110]
+          - list [ref=e111]:
+            - listitem [ref=e112]:
+              - generic [ref=e113]: R01
+              - generic [ref=e114]:
+                - strong [ref=e115]: 邮件内容已变化
+                - paragraph [ref=e116]: 确认前重新读取线程，版本不一致立即停止。
+              - button "刷新任务" [ref=e117] [cursor=pointer]
+            - listitem [ref=e118]:
+              - generic [ref=e119]: R02
+              - generic [ref=e120]:
+                - strong [ref=e121]: 知识依据不足
+                - paragraph [ref=e122]: 不猜价格、库存、佣金或保修承诺。
+              - button "查看知识" [ref=e123] [cursor=pointer]
+            - listitem [ref=e124]:
+              - generic [ref=e125]: R03
+              - generic [ref=e126]:
+                - strong [ref=e127]: 高风险或分类冲突
+                - paragraph [ref=e128]: 禁用发送，交给人工复核。
+              - button "打开待处理" [ref=e129] [cursor=pointer]
+            - listitem [ref=e130]:
+              - generic [ref=e131]: R04
+              - generic [ref=e132]:
+                - strong [ref=e133]: 转发地址错误
+                - paragraph [ref=e134]: 仅显示系统固定部门邮箱，不接受手工收件人。
+              - button "核对路由" [ref=e135] [cursor=pointer]
+            - listitem [ref=e136]:
+              - generic [ref=e137]: R05
+              - generic [ref=e138]:
+                - strong [ref=e139]: 重复点击或重复发送
+                - paragraph [ref=e140]: 执行中锁定按钮，并由后端幂等保护。
+              - button "查看审计" [ref=e141] [cursor=pointer]
+            - listitem [ref=e142]:
+              - generic [ref=e143]: R06
+              - generic [ref=e144]:
+                - strong [ref=e145]: 飞书暂不可用
+                - paragraph [ref=e146]: 继续使用本地知识库，72 小时节流同步。
+              - button "检查同步" [ref=e147] [cursor=pointer]

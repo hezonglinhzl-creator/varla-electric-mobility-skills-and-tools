@@ -1,0 +1,85 @@
+外网爆款视频寻找工具
+
+用途：
+自动生成 TikTok / Instagram / YouTube 搜索入口，采集视频链接、账号、点赞、播放等可见数据，并自动生成：
+1. 为什么爆火
+2. 怎么改编到 Varla / 电摩内容
+3. 建议内容方向
+
+一、第一次使用
+
+1. 双击 start_viral_video_finder.bat
+   看到下面这行说明启动成功：
+   Viral video finder running: http://127.0.0.1:8766
+
+2. Chrome 打开：
+   chrome://extensions
+
+3. 打开右上角“开发者模式”
+
+4. 点击“加载已解压的扩展程序”
+
+5. 选择这个文件夹：
+   chrome_viral_collector_extension
+
+二、怎么找爆款视频
+
+1. 保持 start_viral_video_finder.bat 黑色窗口打开。
+
+2. 打开搜索入口：
+   http://127.0.0.1:8766
+
+3. 按关键词打开 TikTok / Instagram / YouTube 搜索。
+
+4. 看到合适的视频页面后，点击 Chrome 插件：
+   Viral Video Collector
+
+5. 点击：
+   Collect Current Video
+
+6. 数据会写入：
+   outputs\viral_video_research.xlsx
+
+三、表格字段
+
+No.
+Date
+Platform
+Video Link
+Account
+Caption / Title
+Likes
+Views
+Keyword / Trend
+Viral Reason
+E-Moto Adaptation Idea
+Suggested Varla Content
+Priority
+Status
+Notes
+
+四、同步到飞书
+
+双击：
+sync_to_feishu_native_table.bat
+
+它会用本地飞书 OpenAPI 创建一个新的飞书原生表格文档。
+
+注意：
+你给的 Wiki 链接目前需要额外开通 wiki:node:read 权限，当前本地飞书应用不能直接写入那个 Wiki 页面。
+现在的方案是先创建新飞书文档。后续开通权限后，可以改成写入指定 Wiki 页面。
+
+五、关键词
+
+电摩关键词：
+#ebike #electricbike #electricbikes #electricride #electricdirtbike #electricoffroadbike #offroadebike #emoto #emotos #electricmoto #bikelife #bikecheck #ridepov
+
+热点改编关键词：
+black vs white foam rust removal challenge
+lawn mowing race challenge
+satisfying pressure wash transformation
+before and after cleaning challenge
+speed comparison challenge
+POV first ride viral trend
+this or that product comparison
+oddly satisfying repair transformation

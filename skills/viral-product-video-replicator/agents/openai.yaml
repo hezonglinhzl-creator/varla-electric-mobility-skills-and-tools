@@ -1,0 +1,4 @@
+interface:
+  display_name: "爆款产品视频复刻"
+  short_description: "拆解对标视频，生成产品替换脚本、电摩原生 UGC、人物资产和图生视频提示词。"
+  default_prompt: "分析我提供的对标视频和产品素材，生成可执行的分镜、人物与产品锁定、Banana/即梦提示词，以及 TikTok/Instagram 文案。"

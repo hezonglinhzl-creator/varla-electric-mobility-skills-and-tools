@@ -1,0 +1,24 @@
+<!doctype html>
+<meta charset="utf-8">
+<style>
+  body { width: 350px; font-family: Arial, "Microsoft YaHei", sans-serif; color: #1f2329; padding: 12px; }
+  h1 { font-size: 18px; margin: 0 0 10px; }
+  .small { color: #646a73; font-size: 12px; word-break: break-all; white-space: pre-wrap; }
+  .status { padding: 8px; border-radius: 6px; margin: 8px 0; font-size: 13px; }
+  .ok { background: #e8f7ee; border: 1px solid #b7ebc6; }
+  .bad { background: #fff1f0; border: 1px solid #ffa39e; }
+  button { width: 100%; border: 0; border-radius: 6px; padding: 9px 12px; background: #245bdb; color: white; font-weight: 700; cursor: pointer; margin-top: 8px; }
+  button.secondary { background: #43546f; }
+  button:disabled { background: #aeb4c0; cursor: not-allowed; }
+  code { background: #f5f6f8; padding: 2px 4px; border-radius: 4px; }
+</style>
+<h1>Viral Video Collector</h1>
+<div id="server" class="status">Checking local server...</div>
+<div class="small" id="tab">Reading current tab...</div>
+<button id="record" disabled>Collect Current Video</button>
+<button id="collectReels" disabled>Collect Visible Reels</button>
+<button id="search" class="secondary">Open Search Hub</button>
+<div class="small" style="margin-top:10px;">
+  First run <code>start_viral_video_finder.bat</code>. For Instagram, open a logged-in Reels/search/tag page and click Collect Visible Reels.
+</div>
+<script src="popup.js"></script>

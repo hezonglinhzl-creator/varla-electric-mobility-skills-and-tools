@@ -1,0 +1,4 @@
+interface:
+  display_name: "Varla Gmail Automation"
+  short_description: "Controlled Gmail API workflows for Varla KOL email"
+  default_prompt: "Use $varla-gmail-automation to inspect a Gmail KOL thread, generate a safe draft, and perform only the email action I explicitly approve."

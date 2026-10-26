@@ -1,0 +1,7 @@
+interface:
+  display_name: "Varla KOL Reply"
+  short_description: "Maintain the Varla Chrome KOL reply widget and reply rules."
+  default_prompt: "Use $varla-kol-reply-assistant to update the Varla Chrome KOL reply tool, its OCR flow, or its reply templates."
+
+policy:
+  allow_implicit_invocation: true

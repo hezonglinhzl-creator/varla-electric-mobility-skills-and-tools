@@ -1,0 +1,4 @@
+interface:
+  display_name: "飞书word"
+  short_description: "生成飞书可导入的KOL流程文档"
+  default_prompt: "Use $kol-feishu-plan-builder to create a concise KOL outreach workflow document that imports cleanly into Feishu."

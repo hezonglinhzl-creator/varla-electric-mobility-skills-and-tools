@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>本地视频拆镜头脚本工具</title>
+    <link rel="stylesheet" href="/static/style.css?v=20260909-thumb-fast" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <h1>本地视频拆镜头脚本工具</h1>
+        <p>短视频拆解、分镜表、静帧、导出和飞书同步</p>
+      </div>
+      <div class="status" id="status">待上传</div>
+    </header>
+
+    <main class="layout">
+      <section class="panel upload-panel">
+        <div class="field">
+          <label for="videoInput">上传视频（可多选 / 拖拽多个）</label>
+          <input id="videoInput" type="file" accept=".mp4,.mov,.webm,.m4v,video/*" multiple />
+        </div>
+
+        <div class="field">
+          <label>处理模式</label>
+          <div class="segmented">
+            <button class="mode active" data-mode="breakdown">原视频拆解</button>
+            <button class="mode" data-mode="emoto_reference">参考生成电摩脚本</button>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="productModel">参考生成产品</label>
+          <select id="productModel">
+            <option value="M5S">M5S 小车拉新</option>
+            <option value="M7S">M7S 大车性能</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="outputFormat">输出格式</label>
+          <select id="outputFormat">
+            <option value="feishu_native" selected>飞书原生表格</option>
+            <option value="markdown">Markdown 表格</option>
+            <option value="tsv">TSV 表格</option>
+            <option value="json">JSON Payload</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="feishuDocUrl">飞书文档 / Wiki URL</label>
+          <input id="feishuDocUrl" type="text" placeholder="可选；不填则读取 .env" />
+        </div>
+
+        <div class="field">
+          <label for="feishuUserToken">飞书 User Access Token</label>
+          <input id="feishuUserToken" type="password" placeholder="可选；用于访问本人可见的 Wiki" />
+        </div>
+
+        <video id="preview" controls></video>
+
+        <div class="actions">
+          <button id="analyzeBtn" class="primary">拆镜头</button>
+          <button id="cacheReportBtn" type="button">缓存清单</button>
+        </div>
+
+        <div class="actions export-buttons">
+          <button data-export="xlsx">导出 Excel</button>
+          <button data-export="md">导出 Markdown</button>
+          <button id="copyMarkdownBtn" type="button">复制 Markdown</button>
+          <button id="copyRichTableBtn" type="button">复制飞书原生表格</button>
+        </div>
+
+        <div class="actions">
+          <button data-sync="doc">同步飞书原生表格</button>
+          <button id="testDocBtn" type="button">测试飞书文档连接</button>
+        </div>
+
+        <div class="result-box" id="syncResult"></div>
+      </section>
+
+      <section class="panel table-panel">
+        <div class="table-head">
+          <div>
+            <h2>分镜表</h2>
+            <p id="videoInfo">暂无视频</p>
+          </div>
+          <span id="shotCount">0 镜</span>
+        </div>
+        <div id="warnings" class="warnings"></div>
+        <div class="table-wrap">
+          <table id="storyTable" class="story-table">
+            <thead>
+              <tr>
+                <th>镜号</th>
+                <th>景别</th>
+                <th>拍摄手法</th>
+                <th>画面</th>
+                <th>画面说明</th>
+                <th>备注</th>
+                <th>台词</th>
+                <th>英文台词</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script src="/static/app.js?v=20260909-thumb-fast"></script>
+  </body>
+</html>

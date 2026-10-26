@@ -1,0 +1,19 @@
+fastapi>=0.115.0
+uvicorn[standard]>=0.30.0
+python-multipart>=0.0.9
+python-dotenv>=1.0.1
+requests>=2.32.0
+deep-translator>=1.11.4
+opencv-python>=4.9.0
+openpyxl>=3.1.2
+Pillow>=10.3.0
+scenedetect[opencv]>=0.6.4
+python-docx>=1.2.0
+
+# Optional but recommended for dialogue extraction:
+# openai-whisper
+# torch
+#
+# Optional OCR engines. Install one only if you need burned-in subtitle OCR:
+# pytesseract
+# easyocr

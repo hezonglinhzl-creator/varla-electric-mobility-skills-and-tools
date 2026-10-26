@@ -1,0 +1,126 @@
+{
+  "schema_version": 2,
+  "checked_at": "2026-09-09T01:06:33+00:00",
+  "skills": {
+    "varla-gmail-automation": {
+      "baseline_sha256": {
+        "SKILL.md": "4BAC67F96FF0104BC3E659D422CF5DD373CA07C69E6915F836D287925F4401E4",
+        "scripts/gmail_automation.py": "41C27EBC8B0AE1537424B8BBE3A93F541C0C86B101D2E149E4EDA68D4031AD07"
+      },
+      "updated_sha256": {
+        "SKILL.md": "FCDF073454EA5C21F0A464494F685B27DE4AC9AE18DA0E34ECBE28CAFDB1ACB4",
+        "agents/openai.yaml": "A14698AA39849B4385E6E3CF46BD2643CA018028F318A361450D9678BE2820DA",
+        "references/safety-and-routing.md": "6A9B3F995666605FDCB99D73BBB181C335F3653FFB7896AB23E357C2CF709717",
+        "references/setup-windows.md": "D0D8ECA288C5F058F011C1282C20887FA48A863940EE884640ACE5E316DB456B",
+        "scripts/gmail_automation.py": "7DFEC55D3509F622639CBDCF8846533E8F6A9E66CEC9A3EB7D6D7D5C412BF701",
+        "scripts/attachment_utils.py": "A48A94F0407A3C83D6FBF0F2BAD5A5EADDF27450EEE32FD73CBE61963591D863",
+        "scripts/requirements.txt": "7B75F131D3A27C65FCE2AC5A68BC0907D01F123BE7BC7A57092106352D8395E2"
+      },
+      "backup_protection": {
+        "method": "windows_file_attribute",
+        "read_only": true,
+        "verified_at": "2026-07-29T15:42:43+08:00",
+        "verification": {
+          "SKILL.md": {
+            "read_only": true
+          },
+          "scripts/gmail_automation.py": {
+            "read_only": true
+          }
+        }
+      },
+      "backup": {
+        "root_id": "varla_local_backups",
+        "name": "varla-gmail-automation-20260729-152057"
+      },
+      "installed_root_id": "codex_skills/varla-gmail-automation",
+      "version": "2026.08.07.1",
+      "checked_at": "2026-08-12T03:28:28+00:00",
+      "status": "ok",
+      "enabled": true,
+      "drift": false,
+      "files": [
+        {
+          "root_id": "skill_root",
+          "relative_path": "SKILL.md",
+          "sha256": "67ef1663ca0edb8279afdf05e38e238b8896ca9ff6c1ed3b3698678d29009e44"
+        },
+        {
+          "root_id": "skill_root",
+          "relative_path": "scripts/gmail_automation.py",
+          "sha256": "7dfec55d3509f622639cbdcf8846533e8f6a9e66cec9a3eb7d6d7d5c412bf701"
+        }
+      ]
+    },
+    "varla-kol-contract-updater": {
+      "installed_root_id": "codex_skills/varla-kol-contract-updater",
+      "version": "unversioned",
+      "checked_at": "2026-08-12T03:28:28+00:00",
+      "status": "ok",
+      "enabled": true,
+      "drift": false,
+      "files": [
+        {
+          "root_id": "skill_root",
+          "relative_path": "SKILL.md",
+          "sha256": "315309b69b8ffe7140f1094b952576ba9f5af514c65d6e317ab404af3d2d1270"
+        },
+        {
+          "root_id": "skill_root",
+          "relative_path": "scripts/update_contract.py",
+          "sha256": "3c75683835bd5f1b8446338324041f9bbdc2464d493beed1a079677c0defcd83"
+        }
+      ]
+    },
+    "varla-kol-reply-assistant": {
+      "installed_root_id": "codex_skills/varla-kol-reply-assistant",
+      "version": "2026.08.07.1",
+      "checked_at": "2026-09-09T01:06:33+00:00",
+      "status": "ok",
+      "enabled": true,
+      "drift": false,
+      "files": [
+        {
+          "root_id": "skill_root",
+          "relative_path": "SKILL.md",
+          "sha256": "c50a5f8ceb5e2520bf0d8a77ecd7d6054224d58e81e6cddce1133fe02475f2dd"
+        },
+        {
+          "root_id": "reply_project_root",
+          "relative_path": "chrome-extension/contentScript.js",
+          "sha256": "bd6c77cf17cb7af8e319ed58e22911376c43e68fcfdfc586d24d8fb5e214896c"
+        },
+        {
+          "root_id": "reply_project_root",
+          "relative_path": "chrome-extension/popup.js",
+          "sha256": "0394bbcfa1dba9022a5f16700844f8b3fd939f4122303c5d0adbc7e61ce34ffa"
+        },
+        {
+          "root_id": "reply_project_root",
+          "relative_path": "src/app.js",
+          "sha256": "b4332481d9f41a7fd8f33a345609297bc7e323436958a187adc87d77e7fafe14"
+        },
+        {
+          "root_id": "reply_project_root",
+          "relative_path": "src/stageRules.js",
+          "sha256": "9ea188d61090607f1cf7fb85722f9e35d9bfd8f45d1ac3266602253c5c9ac1c9"
+        },
+        {
+          "root_id": "reply_project_root",
+          "relative_path": "chrome-extension/manifest.json",
+          "sha256": "dc5aad4c96eeee999515bf5741bdc417667f54bb8cd6b459cedf9bce007ba5ee"
+        },
+        {
+          "root_id": "reply_project_root",
+          "relative_path": "knowledge_seed/templates.json",
+          "sha256": "7ea1ca702974574d889bed08889805138a31fec7c89702107b48964a47b0ef6c"
+        },
+        {
+          "root_id": "reply_project_root",
+          "relative_path": "knowledge_seed/product_specs.json",
+          "sha256": "87c3c758caba4f01a9b36882b2ef31c06d2b7f92ee1618ea62bade00cbcf18e4"
+        }
+      ]
+    }
+  }
+}

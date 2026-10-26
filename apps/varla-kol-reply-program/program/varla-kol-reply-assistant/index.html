@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Varla KOL 智能回复器 MVP</title>
+    <link rel="stylesheet" href="./src/styles.css" />
+  </head>
+  <body>
+    <main class="app compact-app">
+      <header class="topbar">
+        <div>
+          <h1>Varla KOL 智能回复器</h1>
+          <p>小窗口模式：粘贴对话，生成 4 种可选回复。</p>
+        </div>
+        <div class="badge" id="kbCount">Loading...</div>
+      </header>
+
+      <section class="panel sticky-reader">
+        <h2>Conversation</h2>
+        <textarea id="conversation" class="conversation" placeholder="把 KOL 的消息、邮件内容或聊天记录粘贴到这里"></textarea>
+        <div class="button-row">
+          <button id="autoDetect">自动识别</button>
+          <button id="clearConversation" class="secondary">清空</button>
+          <button id="generateReplies">生成 4 种回复</button>
+        </div>
+        <p class="meta" id="detectedMeta">等待输入内容。</p>
+      </section>
+
+      <section class="grid compact-grid">
+        <div class="panel">
+          <h2>Status</h2>
+          <label>当前 URL <input id="pageUrl" placeholder="可粘贴 Instagram / TikTok / Meta Business / Gmail 页面链接" /></label>
+          <div class="segmented" data-target="platform">
+            <button type="button" data-value="unknown" class="chip active">Unknown</button>
+            <button type="button" data-value="instagram" class="chip">Instagram</button>
+            <button type="button" data-value="tiktok" class="chip">TikTok</button>
+            <button type="button" data-value="meta_business" class="chip">Meta</button>
+            <button type="button" data-value="gmail" class="chip">Gmail</button>
+          </div>
+          <select id="platform" class="hidden-select">
+            <option value="unknown">Unknown</option>
+            <option value="instagram">Instagram</option>
+            <option value="tiktok">TikTok</option>
+            <option value="meta_business">Meta Business</option>
+            <option value="gmail">Gmail</option>
+          </select>
+          <div class="segmented" data-target="product">
+            <button type="button" data-value="Auto" class="chip active">Auto</button>
+            <button type="button" data-value="M5S" class="chip">M5S</button>
+            <button type="button" data-value="M7S" class="chip">M7S</button>
+            <button type="button" data-value="Other" class="chip">Other</button>
+          </div>
+          <select id="product" class="hidden-select">
+            <option>Auto</option>
+            <option>M5S</option>
+            <option>M7S</option>
+            <option>Mavericks</option>
+            <option>Other</option>
+          </select>
+          <div class="row">
+            <label>Creator name <input id="creatorName" placeholder="Unknown 可留空" /></label>
+            <label>Email <input id="creatorEmail" placeholder="自动从文本提取" /></label>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h2>Options</h2>
+          <label>Stage <select id="stage"></select></label>
+          <div class="segmented" data-target="tone">
+            <button type="button" data-value="casual" class="chip active">自然</button>
+            <button type="button" data-value="formal" class="chip">正式</button>
+            <button type="button" data-value="short" class="chip">简短</button>
+            <button type="button" data-value="semi_formal" class="chip">半正式</button>
+            <button type="button" data-value="warm" class="chip">温和</button>
+          </div>
+          <select id="tone" class="hidden-select">
+            <option value="casual">日常自然</option>
+            <option value="formal">商务正式</option>
+            <option value="short">简短快速</option>
+            <option value="semi_formal">半正式</option>
+            <option value="warm">Warm professional</option>
+          </select>
+          <button id="generatePrompt" class="secondary full">生成 ChatGPT Prompt</button>
+        </div>
+
+        <details class="panel settings-details">
+          <summary>Settings</summary>
+          <div class="row">
+            <label>Brand <input id="brandName" /></label>
+            <label>Sender <input id="senderName" /></label>
+          </div>
+          <div class="row">
+            <label>Default commission <input id="commission" /></label>
+            <label>Validity <input id="commissionValidity" /></label>
+          </div>
+          <label>ChatGPT URL <input id="chatgptUrl" /></label>
+          <label>Email signature <textarea id="signature" class="small"></textarea></label>
+          <button id="saveSettings">保存设置</button>
+        </details>
+      </section>
+
+      <section class="panel wide">
+        <h2>4 Reply Options</h2>
+        <div id="replyOutput" class="reply-grid"></div>
+      </section>
+
+      <section class="grid bottom">
+        <div class="panel">
+          <h2>ChatGPT Web Bridge</h2>
+          <textarea id="promptPreview" class="prompt" placeholder="点击 Generate ChatGPT Prompt 后出现完整 Prompt"></textarea>
+          <div class="button-row">
+            <button id="copyPrompt">Copy Prompt for ChatGPT</button>
+            <button id="openChatGPT" class="secondary">Open ChatGPT</button>
+          </div>
+          <label>ChatGPT 生成后的最终回复 <textarea id="finalReply" class="small"></textarea></label>
+          <button id="copyFinal">复制最终回复</button>
+        </div>
+        <div class="panel">
+          <h2>Knowledge Manager</h2>
+          <p class="meta">MVP 已内置训练模板和 M5S / M7S 参数。DOCX / XLSX / 图片解析脚本放在 tools 目录；Chrome 插件壳放在 chrome-extension 目录。</p>
+          <button id="exportKnowledge">导出当前知识库 JSON</button>
+          <div class="notice">
+            插入回复不会自动发送消息。网页版 MVP 会复制到剪贴板；真正网页插入功能留给 Chrome Extension 内容脚本。
+          </div>
+        </div>
+      </section>
+    </main>
+    <div id="toast" class="toast"></div>
+    <script type="module" src="./src/app.js"></script>
+  </body>
+</html>

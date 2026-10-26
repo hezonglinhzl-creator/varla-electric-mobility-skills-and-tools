@@ -1,0 +1,22 @@
+{
+  "project_name": "",
+  "style": "cinematic_pov_product_detail",
+  "duration": 28,
+  "aspect_ratio": "9:16",
+  "language": "en",
+  "beats": [
+    {
+      "id": 1,
+      "type": "hook",
+      "duration": 3,
+      "voiceover": "",
+      "subtitle_segments": [],
+      "shot_intent": "hook",
+      "visual_action": "",
+      "audio_intent": "",
+      "sfx": [],
+      "notes": ""
+    }
+  ]
+}
+

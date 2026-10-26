@@ -1,0 +1,4 @@
+interface:
+  display_name: "更新 KOL 合同"
+  short_description: "更新合同并统计 KOL 视频交付数量"
+  default_prompt: "Use $varla-kol-contract-updater to update this Varla KOL agreement or audit required video deliverables from KOL contracts."

@@ -1,0 +1,21 @@
+Included:
+- app/
+- static/
+- prompts/
+- product_profile.json
+- requirements.txt
+- requirements-whisper.txt
+- .env.example
+- README.md
+- sample_output.md
+- START_HERE.bat
+- INSTALL_FOR_OTHER_COMPUTER.md
+
+Excluded:
+- .env
+- .venv/
+- outputs/
+- logs/
+- cache_reports/
+- uploaded videos
+- __pycache__/

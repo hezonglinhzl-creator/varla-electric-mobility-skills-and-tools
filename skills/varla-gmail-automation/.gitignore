@@ -1,0 +1,31 @@
+# Secrets and OAuth state
+.env
+.env.*
+!.env.example
+credentials.json
+client_secret*.json
+token.json
+*.pem
+*.key
+
+# Python and local environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Local mailbox and business data
+*.sqlite
+*.sqlite3
+*.sqlite-wal
+*.sqlite-shm
+logs/
+data/
+backups/
+generated/
+
+# Editor and operating-system files
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store

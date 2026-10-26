@@ -1,0 +1,4 @@
+interface:
+  display_name: "爆款产品视频复刻"
+  short_description: "拆解对标视频并替换产品，输出分镜、文案、人物设定和即梦提示词。"
+  default_prompt: "拆解这个爆款视频，替换成我的产品，生成分镜脚本、TikTok/INS文案和即梦提示词。"

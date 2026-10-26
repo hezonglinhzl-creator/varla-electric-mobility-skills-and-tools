@@ -1,0 +1,19 @@
+{
+  "product_name": "Himiway off-road e-bike",
+  "category": "electric off-road bike",
+  "creator_voice": "calm, conversational, slightly cinematic",
+  "must_show": [
+    "full product reveal",
+    "frame detail",
+    "tires",
+    "cockpit",
+    "power-on moment",
+    "first smooth roll"
+  ],
+  "avoid_claims": [
+    "top speed",
+    "race",
+    "dangerous riding"
+  ]
+}
+

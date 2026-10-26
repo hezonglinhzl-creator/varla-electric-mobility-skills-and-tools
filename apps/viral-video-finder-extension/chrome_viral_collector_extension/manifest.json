@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Viral Video Collector",
+  "version": "1.0.0",
+  "description": "Collect TikTok, Instagram, and YouTube viral video links into a local research table.",
+  "permissions": ["activeTab", "tabs", "scripting"],
+  "host_permissions": [
+    "http://127.0.0.1:8766/*",
+    "https://*.tiktok.com/*",
+    "https://*.instagram.com/*",
+    "https://*.youtube.com/*",
+    "https://youtu.be/*"
+  ],
+  "action": {
+    "default_title": "Collect Viral Video",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.tiktok.com/*",
+        "https://*.instagram.com/*",
+        "https://*.youtube.com/*",
+        "https://youtu.be/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

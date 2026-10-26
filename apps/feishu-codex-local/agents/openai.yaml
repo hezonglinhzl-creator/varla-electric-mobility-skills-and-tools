@@ -1,0 +1,4 @@
+interface:
+  display_name: "Feishu Codex Local"
+  short_description: "Use cc-connect chat and Python Feishu OpenAPI tools"
+  default_prompt: "Set up or operate local Feishu integration using cc-connect for chat and Python OpenAPI tools for documents and Base."

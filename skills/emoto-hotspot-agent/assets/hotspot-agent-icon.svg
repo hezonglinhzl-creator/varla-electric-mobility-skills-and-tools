@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="eMoto Hotspot Agent">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0F9CA8"/>
+      <stop offset="100%" stop-color="#0A5C64"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="28" fill="url(#bg)"/>
+  <circle cx="44" cy="82" r="12" fill="none" stroke="#F5FFFE" stroke-width="8"/>
+  <circle cx="87" cy="82" r="12" fill="none" stroke="#F5FFFE" stroke-width="8"/>
+  <path d="M38 80 L56 53 H78 L64 80 Z" fill="none" stroke="#F5FFFE" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"/>
+  <path d="M74 49 H92" fill="none" stroke="#F5FFFE" stroke-linecap="round" stroke-width="8"/>
+  <path d="M58 42 C69 29 88 27 100 37" fill="none" stroke="#9DF3EE" stroke-linecap="round" stroke-width="7"/>
+  <path d="M67 33 C79 21 99 21 111 33" fill="none" stroke="#9DF3EE" stroke-linecap="round" stroke-width="5"/>
+</svg>

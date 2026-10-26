@@ -1,0 +1,4 @@
+interface:
+  display_name: "UpPromote联盟自动化"
+  short_description: "创建联盟、优惠码、短链并回填飞书"
+  default_prompt: "Use $varla-uppromote-affiliate-automation to create and verify a Varla affiliate from the supplied Feishu record."

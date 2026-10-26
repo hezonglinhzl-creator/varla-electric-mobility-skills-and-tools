@@ -1,0 +1,8 @@
+Pillow>=10.0.0
+
+# Phase 2 optional:
+# fastapi>=0.115.0
+# uvicorn[standard]>=0.30.0
+# python-multipart>=0.0.9
+# opencv-python>=4.9.0
+# openai>=1.0.0

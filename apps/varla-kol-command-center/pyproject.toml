@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=80"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "varla-kol-command-center"
+version = "0.1.0"
+description = "Local-only KOL operations command center for Varla."
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.116,<1",
+    "uvicorn>=0.35,<1",
+    "pydantic>=2.11,<3",
+    "python-docx>=1.2,<2",
+    "httpx>=0.28,<1",
+    "google-auth==2.40.3",
+    "google-auth-oauthlib==1.2.2",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest>=8.4,<9",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+
+[tool.setuptools.packages.find]
+include = ["app*"]
+
+[tool.setuptools.package-data]
+app = ["web/*.html", "web/*.js", "web/*.css"]

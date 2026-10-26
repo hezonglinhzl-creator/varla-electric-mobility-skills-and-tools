@@ -1,0 +1,4 @@
+interface:
+  display_name: "Varla KOL 回复助手"
+  short_description: "维护本地 KOL 回复知识库、预览与总控台集成"
+  default_prompt: "使用 $varla-kol-reply-assistant 更新 Varla KOL 回复规则，并验证本地预览与人工确认流程。"

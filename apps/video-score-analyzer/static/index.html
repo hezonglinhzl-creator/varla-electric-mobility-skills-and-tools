@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Varla Video Score Analyzer</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <h1>短视频投流评分分析工具</h1>
+        <p>本地上传视频，自动抽帧、看黄金三秒、节奏、画面质量和平台适配。</p>
+      </div>
+      <span id="status">Ready</span>
+    </header>
+
+    <main class="shell">
+      <section class="upload-panel">
+        <div class="dropzone" id="dropzone">
+          <input id="videoInput" type="file" accept=".mp4,.mov,.m4v,.webm,video/*" />
+          <div>
+            <strong>选择一个短视频</strong>
+            <small>支持 mp4 / mov / m4v / webm，本地处理，不上传外网。</small>
+          </div>
+        </div>
+        <video id="preview" controls></video>
+        <button id="analyzeBtn" class="primary">开始分析</button>
+        <div class="hint" id="hint">MVP 会使用 FFmpeg 读取基础信息、抽帧、音频波形和启发式评分。</div>
+      </section>
+
+      <section class="dashboard">
+        <div class="score-card main-score">
+          <span>素材体检分</span>
+          <strong id="totalScore">--</strong>
+          <p id="advice">只看画面、节奏、结构；不代表真实播放表现。</p>
+        </div>
+        <div class="score-card">
+          <span>TikTok</span>
+          <strong id="tiktokScore">--</strong>
+          <p>前 1 秒钩子、真实感、评论引导</p>
+        </div>
+        <div class="score-card">
+          <span>Instagram Reels</span>
+          <strong id="reelsScore">--</strong>
+          <p>画面质感、封面、lifestyle 感</p>
+        </div>
+        <div class="score-card">
+          <span>YouTube Shorts</span>
+          <strong id="shortsScore">--</strong>
+          <p>结构清晰、完播潜力、标题封面</p>
+        </div>
+      </section>
+
+      <section class="content-grid">
+        <article class="panel wide">
+          <div class="panel-head">
+            <h2>实际数据校准</h2>
+            <span>有发布数据时，用真实表现修正判断</span>
+          </div>
+          <div class="performance-grid">
+            <label>播放量 <input id="viewsInput" type="number" min="0" placeholder="例如 120000" /></label>
+            <label>点赞 <input id="likesInput" type="number" min="0" placeholder="例如 6500" /></label>
+            <label>评论 <input id="commentsInput" type="number" min="0" placeholder="例如 320" /></label>
+            <label>分享 <input id="sharesInput" type="number" min="0" placeholder="例如 180" /></label>
+            <label>收藏 <input id="savesInput" type="number" min="0" placeholder="例如 420" /></label>
+            <label>完播率 % <input id="completionInput" type="number" min="0" max="100" placeholder="没有可不填" /></label>
+            <label>平均观看秒 <input id="avgWatchInput" type="number" min="0" step="0.1" placeholder="没有可不填" /></label>
+            <button id="calibrateBtn" type="button">用实际数据校准</button>
+          </div>
+          <div id="performanceResult" class="performance-result">
+            先分析视频，再填真实发布数据。数据表现好时，系统会提示“内容可能有效，低分原因来自视觉规则误判”。
+          </div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head">
+            <h2>基础信息</h2>
+          </div>
+          <dl id="videoFacts" class="facts"></dl>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head">
+            <h2>黄金三秒</h2>
+            <span id="goldenRisk">--</span>
+          </div>
+          <div class="golden">
+            <strong id="goldenScore">--</strong>
+            <p id="goldenIssue">等待分析</p>
+            <ul id="openingTips"></ul>
+          </div>
+        </article>
+
+        <article class="panel wide">
+          <div class="panel-head">
+            <h2>评分拆解</h2>
+          </div>
+          <div id="dimensionBars" class="bars"></div>
+        </article>
+
+        <article class="panel wide">
+          <div class="panel-head">
+            <h2>时间轴缩略图</h2>
+            <span>前 3 秒每 0.25s，之后每 0.5s</span>
+          </div>
+          <div id="timeline" class="timeline"></div>
+        </article>
+
+        <article class="panel wide">
+          <div class="panel-head">
+            <h2>镜头与剪辑建议</h2>
+          </div>
+          <div id="shots" class="shots"></div>
+        </article>
+
+        <article class="panel wide">
+          <div class="panel-head">
+            <h2>导出</h2>
+          </div>
+          <div id="exports" class="exports">分析完成后可导出 JSON / Markdown / CSV。</div>
+        </article>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>

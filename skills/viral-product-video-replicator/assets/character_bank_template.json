@@ -1,0 +1,29 @@
+{
+  "characters": [
+    {
+      "character_id": "western_host_001",
+      "role": "host",
+      "age_range": "28-35",
+      "region_style": "European or American",
+      "appearance": "",
+      "wardrobe": "",
+      "personality": "",
+      "continuity_phrase": "",
+      "positive_prompt": "",
+      "negative_prompt": "",
+      "last_used_for": "",
+      "notes": ""
+    }
+  ],
+  "products": [
+    {
+      "product_id": "",
+      "product_name": "",
+      "identity_phrase": "",
+      "visual_details": "",
+      "selling_points": [],
+      "claim_limits": [],
+      "preferred_scenes": []
+    }
+  ]
+}

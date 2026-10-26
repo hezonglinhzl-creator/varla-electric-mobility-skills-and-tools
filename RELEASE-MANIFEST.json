@@ -1,0 +1,315 @@
+[
+  {
+    "kind": "skill",
+    "source_name": "KOL视频抓取监控",
+    "repo": "skill-kol-video-monitor",
+    "paired_apps": [
+      "varla-instagram-monitor",
+      "kol-recorder-extension",
+      "unified-collector-extension"
+    ],
+    "zip": "skill-kol-video-monitor.zip",
+    "sha256": "1f780ebcc8ed9e1fe668f706e2d772dde79a88943f4b04e320b008429212e451"
+  },
+  {
+    "kind": "skill",
+    "source_name": "ecommerce-ugc-workflow",
+    "repo": "skill-ecommerce-ugc-workflow",
+    "paired_apps": [],
+    "zip": "skill-ecommerce-ugc-workflow.zip",
+    "sha256": "de3adaa63e290c57d3d4b2b6e000469492ea0f2466840fb7eb941c2bf6f1a51c"
+  },
+  {
+    "kind": "skill",
+    "source_name": "emoto-hotspot-agent",
+    "repo": "skill-emoto-hotspot-agent",
+    "paired_apps": [],
+    "zip": "skill-emoto-hotspot-agent.zip",
+    "sha256": "131faeb5b1571d1262c9b506f36d7c6ad0fbc5314814cc60830ef7a713871279"
+  },
+  {
+    "kind": "skill",
+    "source_name": "emoto-ugc-story-director",
+    "repo": "skill-emoto-ugc-story-director",
+    "paired_apps": [
+      "electric-moto-ai-workflow"
+    ],
+    "zip": "skill-emoto-ugc-story-director.zip",
+    "sha256": "7d67ce58ab5c75c538a48bbeeec36e4ed0362062ea5598376e8e3588628a98b1"
+  },
+  {
+    "kind": "skill",
+    "source_name": "feishu-codex-local",
+    "repo": "skill-feishu-codex-local",
+    "paired_apps": [
+      "feishu-codex-local"
+    ],
+    "zip": "skill-feishu-codex-local.zip",
+    "sha256": "eee745c93d3b4c9f5d6c48e3798e9742baa735d9cb852e4435772d457b2db727"
+  },
+  {
+    "kind": "skill",
+    "source_name": "image2-motion-agent",
+    "repo": "skill-image2-motion-agent",
+    "paired_apps": [
+      "dreamina-image2video"
+    ],
+    "zip": "skill-image2-motion-agent.zip",
+    "sha256": "c27ef5aeeccefa3f677c341bc9fb7d4723288043c8c33776a2225d1d64fbd464"
+  },
+  {
+    "kind": "skill",
+    "source_name": "kol-feishu-plan-builder",
+    "repo": "skill-kol-feishu-plan-builder",
+    "paired_apps": [],
+    "zip": "skill-kol-feishu-plan-builder.zip",
+    "sha256": "7c91ce8468d1767773e1954bd661ac31cfcd063bf144708b969e4072e467f6db"
+  },
+  {
+    "kind": "skill",
+    "source_name": "kol建联数据表格skill",
+    "repo": "skill-kol-outreach-spreadsheet",
+    "paired_apps": [
+      "varla-kol-collector",
+      "kol-recorder-extension"
+    ],
+    "zip": "skill-kol-outreach-spreadsheet.zip",
+    "sha256": "bb4a4b90c9642744a13e2c20774c5fe7f832e3a71261d58923d07fb4bc9201e2"
+  },
+  {
+    "kind": "skill",
+    "source_name": "meta-auto-reply-skill",
+    "repo": "skill-meta-auto-reply-skill",
+    "paired_apps": [
+      "varla-social-publisher"
+    ],
+    "zip": "skill-meta-auto-reply-skill.zip",
+    "sha256": "e80926b4ec1953c0a73104107db0b7768c7d7260a5fbfa8bfd5339f7a7f2ebe7"
+  },
+  {
+    "kind": "skill",
+    "source_name": "shopify-kol-order-automation",
+    "repo": "skill-shopify-kol-order-automation",
+    "paired_apps": [
+      "shopify-order-bot"
+    ],
+    "zip": "skill-shopify-kol-order-automation.zip",
+    "sha256": "360ceed11e1017be2f7d385bc5cbff1c105aaa27688bcd8fadfba4b533ab2374"
+  },
+  {
+    "kind": "skill",
+    "source_name": "tiktok-pov-product-seeding",
+    "repo": "skill-tiktok-pov-product-seeding",
+    "paired_apps": [],
+    "zip": "skill-tiktok-pov-product-seeding.zip",
+    "sha256": "adbe61fb94940cce9c73c2723e53bd2b413b9a15b4d7539078d8aa77fc6fcda9"
+  },
+  {
+    "kind": "skill",
+    "source_name": "varla-gmail-automation",
+    "repo": "skill-varla-gmail-automation",
+    "paired_apps": [
+      "varla-kol-command-center"
+    ],
+    "zip": "skill-varla-gmail-automation.zip",
+    "sha256": "d9806ad9b03fd0d3bbbb06ff26ec13e941345408d397d8fdcb176070741c1860"
+  },
+  {
+    "kind": "skill",
+    "source_name": "varla-kol-command-center",
+    "repo": "skill-varla-kol-command-center",
+    "paired_apps": [
+      "varla-kol-command-center"
+    ],
+    "zip": "skill-varla-kol-command-center.zip",
+    "sha256": "f7aea2086ced1df68f7a8924054bf4cfbfa5617e45afc71dd24e3c7465081e8f"
+  },
+  {
+    "kind": "skill",
+    "source_name": "varla-kol-contract-updater",
+    "repo": "skill-varla-kol-contract-updater",
+    "paired_apps": [],
+    "zip": "skill-varla-kol-contract-updater.zip",
+    "sha256": "6c302eb0a4ce4defc44a8ab1de8237ec21489ad5cc3ba0ccbc7f0a361c3d10c9"
+  },
+  {
+    "kind": "skill",
+    "source_name": "varla-kol-feishu-order-writeback-skill",
+    "repo": "skill-varla-kol-feishu-order-writeback-skill",
+    "paired_apps": [
+      "feishu-codex-local",
+      "shopify-order-bot"
+    ],
+    "zip": "skill-varla-kol-feishu-order-writeback-skill.zip",
+    "sha256": "829cdf40849c9e9bcd562ae72e5e7820a720f9bcf90772108ad22846f58c9786"
+  },
+  {
+    "kind": "skill",
+    "source_name": "varla-kol-reply-assistant",
+    "repo": "skill-varla-kol-reply-assistant",
+    "paired_apps": [
+      "varla-kol-reply-program",
+      "varla-kol-command-center"
+    ],
+    "zip": "skill-varla-kol-reply-assistant.zip",
+    "sha256": "f81f3220435095032599c1293f56b4596d4c65bfffda504bcb14feee228d13c3"
+  },
+  {
+    "kind": "skill",
+    "source_name": "varla-uppromote-affiliate-automation",
+    "repo": "skill-varla-uppromote-affiliate-automation",
+    "paired_apps": [
+      "shopify-order-bot"
+    ],
+    "zip": "skill-varla-uppromote-affiliate-automation.zip",
+    "sha256": "d6e8815312bb13622da65173f8e2d86e33c0601a7261cd932888b4da2f67d407"
+  },
+  {
+    "kind": "skill",
+    "source_name": "viral-product-video-replicator",
+    "repo": "skill-viral-product-video-replicator",
+    "paired_apps": [
+      "video-storyboard-tool"
+    ],
+    "zip": "skill-viral-product-video-replicator.zip",
+    "sha256": "261aae311e0fb536210a4a4ac16d1c36ed4687a0e4c3765e469f0cf620c2690c"
+  },
+  {
+    "kind": "skill",
+    "source_name": "周报skill",
+    "repo": "skill-varla-weekly-report",
+    "paired_apps": [
+      "varla-weekly-report"
+    ],
+    "zip": "skill-varla-weekly-report.zip",
+    "sha256": "d8000714a4adbdd01c12e55d4d57501f6c37448c523838ce889023d3c9c16a64"
+  },
+  {
+    "kind": "skill",
+    "source_name": "varla-social-insights-monitor",
+    "repo": "skill-varla-social-insights-monitor",
+    "paired_apps": [],
+    "zip": "skill-varla-social-insights-monitor.zip",
+    "sha256": "f7060f986454901df080b15649d51deb1c43443869bcecc948043454a65f1e16"
+  },
+  {
+    "kind": "app",
+    "source_name": "dreamina-image2video",
+    "repo": "app-dreamina-image2video",
+    "paired_apps": [],
+    "zip": "app-dreamina-image2video.zip",
+    "sha256": "ef8a76ee7858d3e972fc0cc744a73e8fb4e6628963ac2499163a51fb7e0aa14a"
+  },
+  {
+    "kind": "app",
+    "source_name": "electric-moto-ai-workflow",
+    "repo": "app-electric-moto-ai-workflow",
+    "paired_apps": [],
+    "zip": "app-electric-moto-ai-workflow.zip",
+    "sha256": "317762435e5b99004a0d9ce91be733481d6730e23ffe42fefe6a85e223971e69"
+  },
+  {
+    "kind": "app",
+    "source_name": "feishu-codex-local",
+    "repo": "app-feishu-codex-local",
+    "paired_apps": [],
+    "zip": "app-feishu-codex-local.zip",
+    "sha256": "a902aea690cf571eba0ab9e3303e830f4cfd03f422839ae85665d1c0a2a1b3c1"
+  },
+  {
+    "kind": "app",
+    "source_name": "kol-recorder-extension",
+    "repo": "app-kol-recorder-extension",
+    "paired_apps": [],
+    "zip": "app-kol-recorder-extension.zip",
+    "sha256": "f08e23da2f7954e6dca973dfb8625b962342d9fc1dd692be257671bf70200ec7"
+  },
+  {
+    "kind": "app",
+    "source_name": "shopify-order-bot",
+    "repo": "app-shopify-order-bot",
+    "paired_apps": [],
+    "zip": "app-shopify-order-bot.zip",
+    "sha256": "bfb6fb052da030178fd32d5278277b2cc629ccbefcac29b50a230cd2445d052b"
+  },
+  {
+    "kind": "app",
+    "source_name": "unified-collector-extension",
+    "repo": "app-unified-collector-extension",
+    "paired_apps": [],
+    "zip": "app-unified-collector-extension.zip",
+    "sha256": "d5e980dada6262902a33810c8faf0c325d0713bacdd84504df579b312dcf4c21"
+  },
+  {
+    "kind": "app",
+    "source_name": "varla-instagram-monitor",
+    "repo": "app-varla-instagram-monitor",
+    "paired_apps": [],
+    "zip": "app-varla-instagram-monitor.zip",
+    "sha256": "40e178b200c1ea8c9dd7ea465e2d934bf3ce38c11015b65f9b1c78f78ee9fec1"
+  },
+  {
+    "kind": "app",
+    "source_name": "varla-kol-collector",
+    "repo": "app-varla-kol-collector",
+    "paired_apps": [],
+    "zip": "app-varla-kol-collector.zip",
+    "sha256": "a683bda30382a9a54f687a47d63751ef38aaa78c46a75c580b0e9f6b4e55e60b"
+  },
+  {
+    "kind": "app",
+    "source_name": "varla-kol-command-center",
+    "repo": "app-varla-kol-command-center",
+    "paired_apps": [],
+    "zip": "app-varla-kol-command-center.zip",
+    "sha256": "04987818a3769a049ac217ed543786f406185fbccbb449f5de5530e572678a7c"
+  },
+  {
+    "kind": "app",
+    "source_name": "varla-kol-reply-program",
+    "repo": "app-varla-kol-reply-program",
+    "paired_apps": [],
+    "zip": "app-varla-kol-reply-program.zip",
+    "sha256": "c67c0e5e1e83a769dd6ae6f7aeb4680f69be2d76f5defd3665faa57229eb2869"
+  },
+  {
+    "kind": "app",
+    "source_name": "varla-social-publisher",
+    "repo": "app-varla-social-publisher",
+    "paired_apps": [],
+    "zip": "app-varla-social-publisher.zip",
+    "sha256": "2602eff27434d5a6d264a85a941696fadbfed01a4fbb7e799c0dc1537bec1d63"
+  },
+  {
+    "kind": "app",
+    "source_name": "varla-weekly-report",
+    "repo": "app-varla-weekly-report",
+    "paired_apps": [],
+    "zip": "app-varla-weekly-report.zip",
+    "sha256": "034be010dcf67c49af2677704e4eff92ea31f23e808073a15680a7758c72646c"
+  },
+  {
+    "kind": "app",
+    "source_name": "video-score-analyzer",
+    "repo": "app-video-score-analyzer",
+    "paired_apps": [],
+    "zip": "app-video-score-analyzer.zip",
+    "sha256": "47bd7d4471bf0559f894ce42d675b52399d484efe17a56ddecd817d23dedb829"
+  },
+  {
+    "kind": "app",
+    "source_name": "video-storyboard-tool",
+    "repo": "app-video-storyboard-tool",
+    "paired_apps": [],
+    "zip": "app-video-storyboard-tool.zip",
+    "sha256": "104784b3a03a3371047637103222318db504ce60137c6beb582f1a9197d83712"
+  },
+  {
+    "kind": "app",
+    "source_name": "viral-video-finder-extension",
+    "repo": "app-viral-video-finder-extension",
+    "paired_apps": [],
+    "zip": "app-viral-video-finder-extension.zip",
+    "sha256": "261ce71ee85fa7c301e60f4088afc291f34489aac4cbcef66b78377c3f572e6c"
+  }
+]
