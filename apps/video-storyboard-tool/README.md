@@ -1,130 +1,43 @@
-# 本地视频拆镜头脚本工具 MVP
+# 本地视频拆镜头与分镜表 / Local Shot Detection and Storyboards
 
-这是一个本地 FastAPI + 简单网页前端工具，用于短视频拆镜头、抽静帧、提取台词、生成分镜表，并同步到飞书多维表格 / 飞书文档。
+**简体中文** | [English](README.en.md)
 
-## 已实现功能
+视频上传、镜头切分、关键帧、可编辑分镜表和表格导出。
 
-- 上传 `mp4 / mov / webm / m4v`
-- 自动镜头切分：优先 PySceneDetect，失败时降级 OpenCV
-- 每个镜头抽取 1 张关键帧：`outputs/<job_id>/frames/shot_001.jpg`
-- 音频提取：检测到 `ffmpeg` 时自动提取
-- 台词识别：安装 `openai-whisper` 后自动启用；未安装时台词留空并显示提醒
-- 表格字段严格包含：镜号、景别、拍摄手法、画面、画面说明、备注、台词、英文台词
-- 前端可手动修改单元格
-- 导出 CSV / Excel / Markdown
-- Excel 插图：优先把静帧插入到“画面”列，同时保留本地图片路径
-- 飞书同步模块：支持多维表格记录、图片上传尝试、文档创建
-- 参考生成电摩脚本模式：按参考视频镜头结构生成电摩 / 电动越野车 / 骑行产品分镜
+## 运行环境
 
-## 安装
+Python 3.11+、FFmpeg/FFprobe；语音识别可选 Whisper。
 
-在 PowerShell 进入本目录：
+## 第一次使用
 
-```powershell
-cd "C:\Users\<your-user>\Documents\New project 9\项目\视频拆镜头工具"
-python -m venv .venv
-.\.venv\Scripts\Activate.ps1
-python -m pip install -r requirements.txt
-```
+先解压完整包。以下命令都在**当前程序目录**运行，不要在 ZIP 预览窗口中运行。Windows 用户可在资源管理器打开该目录，在地址栏输入 `powershell` 并按回车。
 
-如果需要语音识别，再安装 Whisper：
+1. 在本目录运行 `python -m venv .venv`。
+2. 运行 `.\.venv\Scripts\python.exe -m pip install -r requirements.txt`。
+3. 确认 `ffmpeg -version` 可用；如需台词识别，再用该 Python 安装 `requirements-whisper.txt`。
+4. 运行 `.\.venv\Scripts\python.exe -m uvicorn app.main:app --host 127.0.0.1 --port 8787`。
+5. 打开页面上传自己的短测试视频，检查镜头和台词，修改表格后导出。飞书功能另填自己的 `.env`。
 
-```powershell
-python -m pip install -r requirements-whisper.txt
-```
+浏览器打开：`http://127.0.0.1:8787`
 
-并确保系统能使用 `ffmpeg`：
+## 成功后应该看到什么
 
-```powershell
-ffmpeg -version
-```
+`outputs/<job_id>/` 中生成关键帧、JSON 和表格。
 
-## 启动
+## 当前功能边界
 
-```powershell
-.\.venv\Scripts\Activate.ps1
-python -m uvicorn app.main:app --host 127.0.0.1 --port 8787
-```
+部分画面说明是模板或占位，不代表已完成视觉理解；Whisper 未安装时台词可能为空。
 
-浏览器打开：
+## 常见问题
 
-```text
-http://127.0.0.1:8787
-```
+| 现象 | 处理方法 |
+| --- | --- |
+| 黑窗口闪退 / 找不到 Python | 在当前目录打开 PowerShell，执行 `python --version`。需要安装时从 python.org 安装并勾选 Add Python to PATH，然后重新运行本文命令看具体错误。 |
+| 提示缺少模块 | 用启动程序的同一个 Python 安装该程序 requirements 中的依赖。 |
+| 页面打不开 / 端口占用 | 对照本文地址和服务日志；先关闭自己正在使用的冲突工具。浏览器扩展不能替代后端。 |
+| Excel 保存失败 | 关闭 Excel/WPS 中的文件，检查输出路径后重试一次。 |
+| 登录或飞书权限失败 | 使用自己的配置，检查目标资源权限；不要复制别人的 Token。 |
 
-也可以双击：
+## 本地数据
 
-```text
-start_video_storyboard_tool.bat
-```
-
-## 飞书配置
-
-复制 `.env.example` 为 `.env`，填写：
-
-```dotenv
-FEISHU_APP_ID=
-FEISHU_APP_SECRET=
-FEISHU_BITABLE_APP_TOKEN=
-FEISHU_BITABLE_TABLE_ID=
-FEISHU_FOLDER_TOKEN=
-FEISHU_DOC_FOLDER_TOKEN=
-FEISHU_WIKI_PARENT_NODE_TOKEN=FyXOwMNkUi895Dkvo77cF2QqnHg
-FEISHU_WIKI_PARENT_URL=https://m9kzgsiucj.feishu.cn/wiki/FyXOwMNkUi895Dkvo77cF2QqnHg
-FEISHU_ENABLE_SYNC=true
-```
-
-如果你已经用过本地飞书工具，程序也会读取：
-
-```text
-C:\Users\<your-user>\.feishu-docs\config.json
-```
-
-飞书文档同步现在会优先使用知识库父节点：
-
-```text
-https://m9kzgsiucj.feishu.cn/wiki/FyXOwMNkUi895Dkvo77cF2QqnHg
-```
-
-同步时会在该知识库页面下面创建一篇新的 docx 子页面，并把分镜表写成飞书原生表格块，而不是 Markdown 管道表或纯文本。
-
-多维表格建议提前建这些字段：
-
-| 字段 | 类型建议 |
-|---|---|
-| 镜号 | 文本 |
-| 景别 | 文本 / 单选 |
-| 拍摄手法 | 文本 / 单选 |
-| 画面 | 附件；如果权限不足会写入本地图片路径 |
-| 画面说明 | 多行文本 |
-| 备注 | 多行文本 |
-| 台词 | 多行文本 |
-| 英文台词 | 多行文本 |
-| 开始时间 | 文本 |
-| 结束时间 | 文本 |
-| 时长 | 文本 |
-| 视频名称 | 文本 |
-| 状态 | 单选，默认 To Do |
-| 创建时间 | 文本 |
-
-## 输出结构
-
-```text
-outputs/
-  <job_id>/
-    input_video.mp4
-    audio.wav
-    storyboard.json
-    frames/
-      shot_001.jpg
-      shot_002.jpg
-    demo_storyboard.csv
-    demo_storyboard.xlsx
-    demo_storyboard.md
-```
-
-## 说明
-
-- 画面说明目前是可编辑占位/电摩模板，不做复杂 AI 营销分析。
-- OCR 已预留扩展位置，第一版重点先跑通稳定拆镜头、台词、静帧、表格和飞书同步。
-- 飞书图片上传依赖应用权限；若上传失败，工具会保留本地图片路径，保证记录不会因为图片权限中断。
+账号配置、会话、台账和运行结果由使用者在自己电脑生成或配置。公开源码不附带真实客户/KOL 数据、邮箱内容、合同或已登录账号。

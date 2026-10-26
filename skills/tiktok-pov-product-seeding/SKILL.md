@@ -32,7 +32,7 @@ Do not turn the output into a brand ad, official product page, speed challenge, 
 - Do not edit encrypted or currently-open Jianying drafts in place. Create a new draft folder or a draft blueprint.
 - If the script text changes, regenerate voiceover with CosyVoice before editing. Do not reuse an old voiced file against new copy.
 - If reusing an existing voiced file, keep the script text from that voiceover or transcribe it first; do not silently swap in a different script.
-- For this workflow, use the saved `ryan` cloned voice when requested. Preferred source is `D:\项目\Cosyvoice\custom_voices\ryan_prompt.wav` and `ryan_prompt.txt`, via the local CosyVoice WebUI/API.
+- For this workflow, use the saved `ryan` cloned voice when requested. Preferred source is `C:/path/to/your-project` and `ryan_prompt.txt`, via the local CosyVoice WebUI/API.
 - Source footage must stay true 9:16 in the final draft. If a selected clip appears letterboxed, sideways, or not filling the vertical canvas, reject it or crop/transform it before delivery.
 - Reject meaningless or mismatched shots: no hand-blocked frames, no black/empty frames, no accidental ground-only shots, no repeated same-action shots, and no clip that does not prove the current voiceover beat.
 - Repeated action rule: one complete action can appear once, and the editor may cut inside that action. Do not use two separate clips showing the same action, such as two separate key-turn/power-on shots.
@@ -67,16 +67,16 @@ Run:
 
 ```powershell
 python C:\Skills\tiktok-pov-product-seeding\scripts\tiktok_pov_workflow.py `
-  --media-dir "D:\项目\himiway\视频" `
-  --output-dir "D:\项目\himiway\TK自动化" `
+  --media-dir "C:/path/to/your-project" `
+  --output-dir "C:/path/to/your-project" `
   --project-name "himiway_tiktok_pov" `
   --product-name "Himiway off-road e-bike" `
   --llm-provider openai `
   --openai-model "gpt-4.1-mini" `
-  --voiceover-source "D:\项目\himiway\配音男.mp3" `
+  --voiceover-source "C:/path/to/your-project" `
   --voice-speed 1.2 `
-  --bgm-source "D:\项目\himiway\bgm.MP3" `
-  --reference-video "D:\项目\himiway\m5.mp4" `
+  --bgm-source "C:/path/to/your-project" `
+  --reference-video "C:/path/to/your-project" `
   --style-preset "capcut_native_fast_pov" `
   --fit-duration-to-voiceover
 ```
@@ -120,7 +120,7 @@ Run the audit before delivery:
 
 ```powershell
 python C:\Skills\tiktok-pov-product-seeding\scripts\audit_tiktok_pov_run.py `
-  --output-dir "D:\项目\himiway\TK自动化" `
-  --plan-file "D:\项目\himiway\TK自动化\jianying_draft\retrieval_plan.semantic_peakcut.generated.json" `
+  --output-dir "C:/path/to/your-project" `
+  --plan-file "C:/path/to/your-project" `
   --draft-dir "C:\Users\<your-user>\AppData\Local\JianyingPro\User Data\Projects\com.lveditor.draft\himiway_tiktok_pov_120x_v3_semantic_peakcut"
 ```

@@ -1,0 +1,187 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id String @id @default(cuid())
+  email String @unique
+  passwordHash String
+  sessions Session[]
+  auditLogs AuditLog[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Session {
+  id String @id @default(cuid())
+  tokenHash String @unique
+  expiresAt DateTime
+  userId String
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+}
+
+model SocialAccount {
+  id String @id @default(cuid())
+  platform String
+  externalAccountId String
+  displayName String
+  scopes String
+  tokenExpiresAt DateTime?
+  status String @default("ACTIVE")
+  credential OAuthCredential?
+  publications PlatformPublication[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  @@unique([platform, externalAccountId])
+}
+
+model OAuthCredential {
+  id String @id @default(cuid())
+  socialAccountId String @unique
+  socialAccount SocialAccount @relation(fields: [socialAccountId], references: [id], onDelete: Cascade)
+  accessTokenEncrypted String
+  refreshTokenEncrypted String?
+  iv String
+  authTag String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model MediaAsset {
+  id String @id @default(cuid())
+  sha256 String @unique
+  originalName String
+  objectKey String
+  mimeType String
+  sizeBytes BigInt
+  durationMs Int
+  width Int
+  height Int
+  codec String
+  frameRate Float
+  thumbnailKey String?
+  contentItems ContentItem[]
+  createdAt DateTime @default(now())
+}
+
+model ContentItem {
+  id String @id @default(cuid())
+  internalTitle String
+  product String
+  mediaAssetId String
+  mediaAsset MediaAsset @relation(fields: [mediaAssetId], references: [id])
+  selectedPlatforms String
+  scheduledAtUtc DateTime
+  timezone String
+  approvalStatus String @default("DRAFT")
+  campaign String?
+  notes String?
+  platformContent PlatformContent[]
+  schedules Schedule[]
+  snapshots ApprovalSnapshot[]
+  publications PlatformPublication[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model PlatformContent {
+  id String @id @default(cuid())
+  contentItemId String
+  platform String
+  payloadJson String
+  contentItem ContentItem @relation(fields: [contentItemId], references: [id], onDelete: Cascade)
+  @@unique([contentItemId, platform])
+}
+
+model Schedule {
+  id String @id @default(cuid())
+  contentItemId String
+  contentItem ContentItem @relation(fields: [contentItemId], references: [id], onDelete: Cascade)
+  scheduledAtUtc DateTime
+  timezone String
+  status String @default("PENDING")
+  createdAt DateTime @default(now())
+}
+
+model ApprovalSnapshot {
+  id String @id @default(cuid())
+  contentItemId String
+  contentItem ContentItem @relation(fields: [contentItemId], references: [id], onDelete: Cascade)
+  snapshotJson String
+  approvedAt DateTime
+  approvedById String
+  createdAt DateTime @default(now())
+}
+
+model PlatformPublication {
+  id String @id @default(cuid())
+  contentItemId String
+  contentItem ContentItem @relation(fields: [contentItemId], references: [id], onDelete: Cascade)
+  socialAccountId String?
+  socialAccount SocialAccount? @relation(fields: [socialAccountId], references: [id])
+  platform String
+  status String @default("SCHEDULED")
+  idempotencyKey String @unique
+  externalId String?
+  permalink String?
+  errorCode String?
+  traceId String?
+  attempts PublishAttempt[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  @@unique([contentItemId, platform])
+}
+
+model PublishAttempt {
+  id String @id @default(cuid())
+  publicationId String
+  publication PlatformPublication @relation(fields: [publicationId], references: [id], onDelete: Cascade)
+  attempt Int
+  status String
+  errorCode String?
+  errorMessage String?
+  traceId String?
+  startedAt DateTime @default(now())
+  finishedAt DateTime?
+  @@unique([publicationId, attempt])
+}
+
+model WebhookEvent {
+  id String @id @default(cuid())
+  platform String
+  externalEventId String
+  payloadRedacted String
+  signatureValid Boolean
+  processedAt DateTime?
+  createdAt DateTime @default(now())
+  @@unique([platform, externalEventId])
+}
+
+model AuditLog {
+  id String @id @default(cuid())
+  userId String?
+  user User? @relation(fields: [userId], references: [id])
+  action String
+  entityType String
+  entityId String?
+  metadataJson String
+  createdAt DateTime @default(now())
+}
+
+model SystemSetting {
+  key String @id
+  valueEncrypted String?
+  valuePublic String?
+  updatedAt DateTime @updatedAt
+}
+
+model WorkerHeartbeat {
+  id String @id @default("publisher")
+  seenAt DateTime @updatedAt
+}

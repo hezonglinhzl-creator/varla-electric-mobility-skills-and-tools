@@ -15,7 +15,7 @@ def resolve_document(client: FeishuClient) -> tuple[str, str, dict[str, Any]]:
     config = client.config
     doc_id = config.get("doc_id") or extract_docx_token(config.get("doc_url"))
     if doc_id:
-        return doc_id, config.get("doc_url") or f"https://m9kzgsiucj.feishu.cn/docx/{doc_id}", {"source": "docx"}
+        return doc_id, config.get("doc_url") or f"https://your-workspace.feishu.cn/docx/{doc_id}", {"source": "docx"}
 
     wiki_url = config.get("wiki_parent_url") or config.get("doc_url")
     wiki_token = extract_wiki_token(wiki_url) or config.get("wiki_parent_node_token")

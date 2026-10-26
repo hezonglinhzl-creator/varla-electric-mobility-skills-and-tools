@@ -20,8 +20,8 @@ from app.gmail_gateway import sanitize_error as _gateway_sanitize_error
 
 
 FEISHU_WIKI_URL = (
-    "https://m9kzgsiucj.feishu.cn/wiki/"
-    "Oo35w9AWgiy0m2kEB5jcUeC6nI3?from=from_copylink"
+    "https://your-workspace.feishu.cn/wiki/"
+    "YOUR_FEISHU_RESOURCE_TOKEN?from=from_copylink"
 )
 SYNC_INTERVAL = timedelta(hours=72)
 COMMAND_TIMEOUT_SECONDS = 30

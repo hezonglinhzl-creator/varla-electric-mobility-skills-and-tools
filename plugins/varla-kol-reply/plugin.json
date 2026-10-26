@@ -1,0 +1,6 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "varla-kol-reply",
+  "version": "0.5.1",
+  "description": "Varla KOL 三选回复指令 / Three-option KOL reply workflow"
+}

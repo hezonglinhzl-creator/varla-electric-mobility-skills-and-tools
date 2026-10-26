@@ -1,0 +1,11 @@
+{
+  "name": "varla-kol-reply",
+  "version": "0.5.1",
+  "description": "Varla KOL 三选回复指令 / Three-option KOL reply workflow",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Varla KOL回复 / KOL Reply",
+    "shortDescription": "KOL 三选回复 / Reply options",
+    "category": "Productivity"
+  }
+}

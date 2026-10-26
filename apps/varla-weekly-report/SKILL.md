@@ -1,6 +1,6 @@
 ---
 name: varla-weekly-report
-description: Build Varla/Himiway weekly social media reports from local TikTok, Instagram, Facebook, and red influencer screenshots or pasted metrics. Use when the user asks to update Varla weekly data, generate a Feishu-native weekly report/table, calculate total interaction, compare this week with last week, or process files under D:\项目\himiway\varla数据.
+description: Build Varla/Himiway weekly social media reports from local TikTok, Instagram, Facebook, and red influencer screenshots or pasted metrics. Use when the user asks to update Varla weekly data, generate a Feishu-native weekly report/table, calculate total interaction, compare this week with last week, or process files under C:/path/to/your-project
 ---
 
 # Varla Weekly Report
@@ -26,7 +26,7 @@ Use this exact schema and row order:
 
 ## Data Source Workflow
 
-Use `D:\项目\himiway\varla数据` as the default local data folder when the user mentions Varla weekly data but does not give another path.
+Use `C:/path/to/your-project` as the default local data folder when the user mentions Varla weekly data but does not give another path.
 
 Look for week-named files first:
 
@@ -73,7 +73,7 @@ Format as one decimal place with a sign, for example `+43.9%` or `-25.5%`. Leave
 - Do not wrap the table in a code block.
 - Do not use HTML tables.
 - Keep the final answer focused on the paste-ready table unless the user asks for analysis.
-- When saving a local copy, use: `D:\项目\himiway\varla数据\Varla_<week>_本周加上周环比_飞书原生表格.md`.
+- When saving a local copy, use: `C:/path/to/your-project`.
 
 ## Final Check
 

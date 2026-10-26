@@ -159,7 +159,7 @@ function gmailThreadUrl(threadId) {
 }
 
 function openExternalUrl(url) {
-  if (!/^https:\/\/(?:mail\.google\.com|m9kzgsiucj\.feishu\.cn)\//.test(url)) {
+  if (!/^https:\/\/(?:mail\.google\.com|your-workspace\.feishu\.cn)\//.test(url)) {
     showMessage("该外部入口未通过安全检查。", "error");
     return;
   }

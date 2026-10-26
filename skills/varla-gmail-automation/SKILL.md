@@ -47,8 +47,8 @@ Use this route when the user asks creators or customers about joining a Varla co
 
 Only include community links supplied by the user. The currently approved links are:
 
-- WhatsApp: `https://chat.whatsapp.com/BCpypHeupG52ncc4RmIJ6D`
-- Discord: `https://discord.gg/FfBhNqQJN`
+- WhatsApp: `https://chat.whatsapp.com/YOUR_INVITE_CODE`
+- Discord: `https://discord.gg/YOUR_INVITE_CODE`
 
 Search by exact normalized email first. If a usable existing creator thread is found, reply in that thread and preserve its subject. If no usable thread exists, or the user explicitly authorizes a new email after a blocked thread, use a separate compose with a clear subject such as `Join the Varla community and share your feedback`. Do not claim that a recipient purchased a product unless a verified record establishes it; phrase the purchase question conditionally when needed. Send one recipient per message, use real paragraph breaks, and record the message/thread ID plus whether the message was a reply or new compose.
 

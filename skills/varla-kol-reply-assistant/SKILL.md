@@ -38,7 +38,7 @@ When the user gives only a folder or says "update the reply program", inspect be
 
 Common project root:
 
-`E:\himiway\KOL回复训练\脚本\varla-kol-reply-assistant`
+`C:/path/to/your-project`
 
 Expected important files:
 
@@ -117,7 +117,7 @@ Use these business rules when editing templates or prompts:
 9. Treat quoted `"info@varlascooter.com" <info@varlascooter.com>` as the local account only when both values canonicalize to the same address. Any different address-like display name is ambiguous and stops the Gmail action.
 10. **忽略** changes only the clicked task ID to ignored. **确认回复/确认转发** changes only that task after Gmail verification succeeds; on failure, leave it visible with the exact error and no sent state.
 11. Health must distinguish reply-project syntax/catalog drift from Gmail authorization. A reply-assistant version change may require reviewed lock acceptance, but it must never force a Google login.
-12. The active Windows source is `E:\himiway\KOL回复训练\脚本\varla-kol-reply-assistant`; verify that exact directory before validating hashes or editing runtime files.
+12. The active Windows source is `C:/path/to/your-project`; verify that exact directory before validating hashes or editing runtime files.
 
 ## Shipping Rule
 

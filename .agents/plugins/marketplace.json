@@ -1,0 +1,20 @@
+{
+  "name": "varla-local-tools",
+  "interface": {
+    "displayName": "Varla 本地工具 / Local Tools"
+  },
+  "plugins": [
+    {
+      "name": "varla-kol-reply",
+      "source": {
+        "source": "local",
+        "path": "./plugins/varla-kol-reply"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 ---
 name: varla-kol-reply-assistant
-description: Maintain, tune, and package a Varla/Himiway KOL reply assistant for Chrome. Use when the task involves a floating in-page KOL widget, reply template logic, OCR screenshot paste or drag handling, Meta Business Suite / Instagram / TikTok / Gmail support, product-exchange reply rules, or a project structured like D:\项目\himiway\KOL回复训练\脚本\varla-kol-reply-assistant.
+description: Maintain, tune, and package a Varla/Himiway KOL reply assistant for Chrome. Use when the task involves a floating in-page KOL widget, reply template logic, OCR screenshot paste or drag handling, Meta Business Suite / Instagram / TikTok / Gmail support, product-exchange reply rules, or a project structured like C:/path/to/your-project
 ---
 
 # Varla KOL Reply Assistant
@@ -11,11 +11,11 @@ Maintain the Chrome extension as the main product surface.
 
 Default project path on Team Member's machine:
 
-`D:\项目\himiway\KOL回复训练\脚本\varla-kol-reply-assistant`
+`C:/path/to/your-project`
 
 Default extension path on Team Member's machine:
 
-`D:\项目\himiway\KOL回复训练\脚本\varla-kol-reply-assistant\chrome-extension`
+`C:/path/to/your-project`
 
 If the project is installed elsewhere, search for these files first:
 
@@ -71,9 +71,9 @@ If the project is installed elsewhere, search for these files first:
 Run these after edits:
 
 ```powershell
-node --check "D:\项目\himiway\KOL回复训练\脚本\varla-kol-reply-assistant\chrome-extension\popup.js"
-node --check "D:\项目\himiway\KOL回复训练\脚本\varla-kol-reply-assistant\chrome-extension\contentScript.js"
-Get-Content -LiteralPath "D:\项目\himiway\KOL回复训练\脚本\varla-kol-reply-assistant\chrome-extension\manifest.json" -Encoding UTF8 | ConvertFrom-Json | Out-Null
+node --check "C:/path/to/your-project"
+node --check "C:/path/to/your-project"
+Get-Content -LiteralPath "C:/path/to/your-project" -Encoding UTF8 | ConvertFrom-Json | Out-Null
 ```
 
 Validate the skill itself after updates when the environment has `yaml` available:

@@ -4,8 +4,8 @@ Use this workflow when operating or modifying the local video storyboard tool, o
 
 ## Known local tool
 
-- Project: `E:\codex数据\自动拆解脚本\video-storyboard-tool`
-- One-click launcher: `E:\codex数据\自动拆解脚本\video-storyboard-tool\launch_video_storyboard_tool.bat`
+- Project: `C:/path/to/your-project`
+- One-click launcher: `C:/path/to/your-project`
 - Local URL: `http://127.0.0.1:8787/`
 - Health check: verify the real process and HTTP endpoint before reporting that the tool is running.
 

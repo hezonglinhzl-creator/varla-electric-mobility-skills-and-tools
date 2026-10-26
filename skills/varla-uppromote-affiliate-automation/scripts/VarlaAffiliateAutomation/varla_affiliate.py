@@ -147,7 +147,7 @@ def safe_creator_name(name: str) -> str:
 def split_creator_name(name: str) -> tuple[str, str]:
     safe_name = safe_creator_name(name)
     parts = safe_name.split()
-    # UpPromote validates an unsplit PascalCase handle such as JustDoItTray as
+    # UpPromote validates an unsplit PascalCase handle such as SampleCreator as
     # an invalid first name.  Split only clear component boundaries from the
     # supplied handle; this does not invent a surname and leaves one-word
     # handles unchanged.
@@ -508,7 +508,7 @@ def main(argv: list[str] | None = None) -> int:
     subject, template = read_docx_email(args.docx)
     first_name, last_name = split_creator_name(creator.name)
     # Keep the browser-detail lookup aligned with the normalized name that was
-    # actually saved in UpPromote (for example Just Do It Tray).
+    # actually saved in UpPromote (for example Just Creator).
     email_name = " ".join(part for part in (first_name, last_name) if part != "-")
     audit: dict[str, Any] = {
         "started_at": datetime.now().astimezone().isoformat(),

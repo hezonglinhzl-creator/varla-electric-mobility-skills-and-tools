@@ -1,75 +1,42 @@
-# Varla Video Score Analyzer
+# 本地短视频评分分析 / Local Short Video Score Analyzer
 
-本地短视频投流评分分析工具 MVP。当前版本优先实现可运行闭环：
+**简体中文** | [English](README.en.md)
 
-- 本地视频上传
-- FFprobe 基础信息分析
-- FFmpeg 抽帧
-- 0-3 秒黄金三秒评分
-- 时间轴缩略图
-- 简易镜头切点和剪辑建议
-- 音频波形和静音段检测
-- JSON / Markdown / CSV 导出
+前三秒、剪辑节奏、抽帧、波形和启发式评分导出。
 
-## 一键启动
+## 运行环境
 
-双击：
+Python 3.11+、FFmpeg/FFprobe、Pillow。
 
-```powershell
-start_video_score_analyzer.bat
-```
+## 第一次使用
 
-或在 PowerShell 运行：
+先解压完整包。以下命令都在**当前程序目录**运行，不要在 ZIP 预览窗口中运行。Windows 用户可在资源管理器打开该目录，在地址栏输入 `powershell` 并按回车。
 
-```powershell
-cd "C:\Users\<your-user>\Documents\New project 9\项目\video-score-analyzer"
-python server.py
-```
+1. 运行 `python -m pip install -r requirements.txt`。
+2. 确认 `ffmpeg -version` 与 `ffprobe -version` 可运行。
+3. 双击 `start_video_score_analyzer.bat`，或运行 `python server.py`。
+4. 打开页面上传自己的视频，查看评分、缩略图和建议，再导出报告。
 
-打开地址：
+浏览器打开：`http://127.0.0.1:8765`
 
-```text
-http://127.0.0.1:8765
-```
+## 成功后应该看到什么
 
-## 环境要求
+导出位于 `exports/`；分析中间文件位于 `reports/`。
 
-- Python 3.11+
-- FFmpeg / FFprobe 已加入 PATH
-- Pillow
+## 当前功能边界
 
-当前机器已检测到 FFmpeg 和 Pillow，可以直接跑。
+评分是启发式参考，不是投放效果预测；端口 8765 与 KOL 记录器冲突，避免同时启动。
 
-## 目录结构
+## 常见问题
 
-```text
-video-score-analyzer/
-  app/                 核心分析逻辑
-  static/              本地网页界面
-  uploads/             上传的视频副本
-  reports/             抽帧和中间分析结果
-  exports/             JSON / Markdown / CSV 导出
-  docs/                技术方案和后续开发设计
-  server.py            本地 Web 服务入口
-```
+| 现象 | 处理方法 |
+| --- | --- |
+| 黑窗口闪退 / 找不到 Python | 在当前目录打开 PowerShell，执行 `python --version`。需要安装时从 python.org 安装并勾选 Add Python to PATH，然后重新运行本文命令看具体错误。 |
+| 提示缺少模块 | 用启动程序的同一个 Python 安装该程序 requirements 中的依赖。 |
+| 页面打不开 / 端口占用 | 对照本文地址和服务日志；先关闭自己正在使用的冲突工具。浏览器扩展不能替代后端。 |
+| Excel 保存失败 | 关闭 Excel/WPS 中的文件，检查输出路径后重试一次。 |
+| 登录或飞书权限失败 | 使用自己的配置，检查目标资源权限；不要复制别人的 Token。 |
 
-## MVP 评分权重
+## 本地数据
 
-- 黄金三秒：25%
-- 视频结构：15%
-- 镜头节奏：15%
-- 产品露出：15%
-- 情绪价值：10%
-- 画面质量：10%
-- 平台适配：5%
-- CTA / 转化潜力：5%
-
-当前评分是本地启发式算法，后续可以把 `app/analyzer.py` 里的帧评分替换成 OpenAI API、本地视觉模型或人工标注模型。
-
-## 后续阶段
-
-Phase 2：接入 OpenAI / 本地视觉模型，识别产品、人物、字幕、logo、场景和情绪价值。
-
-Phase 3：导入或抓取 TikTok / Instagram / YouTube Shorts 竞品数据，做爆款基准库。
-
-Phase 4：升级 React + FastAPI + SQLite + 桌面封装。
+账号配置、会话、台账和运行结果由使用者在自己电脑生成或配置。公开源码不附带真实客户/KOL 数据、邮箱内容、合同或已登录账号。

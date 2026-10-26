@@ -33,7 +33,7 @@ Treat the supplied KOL webpage or Feishu Base/table/record URL as the entry poin
 
 `code name` is the source of truth. If it is blank, stop and report the missing value; never invent a code. An existing `code link` means UpPromote/link creation is already complete for that creator. Stop by default; when the user specifically asks to send or resume the email stage, verify the stored code/link by reread and resume with `--resume-existing-link` without recreating anything.
 
-If a real person name has clear first and last components, split it between the UpPromote fields. If it is a handle or one-component identity, place the exact handle in `First name` and use `-` in the required `Last name` field; do not invent a surname. If UpPromote rejects a PascalCase handle as a single first name, split only its unambiguous capitalization boundaries (for example, `JustDoItTray` → `Just` / `Do It Tray`) and use that same normalized display name when locating the affiliate detail page and preparing the email.
+If a real person name has clear first and last components, split it between the UpPromote fields. If it is a handle or one-component identity, place the exact handle in `First name` and use `-` in the required `Last name` field; do not invent a surname. If UpPromote rejects a PascalCase handle as a single first name, split only its unambiguous capitalization boundaries (for example, `SampleCreator` → `Just` / `Creator`) and use that same normalized display name when locating the affiliate detail page and preparing the email.
 
 ## Workflow
 

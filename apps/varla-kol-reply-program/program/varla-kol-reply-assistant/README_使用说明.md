@@ -11,7 +11,7 @@
 1. 打开 Chrome，进入 `chrome://extensions/`。
 2. 打开右上角 `开发者模式`。
 3. 点击 `加载已解压的扩展程序`。
-4. 选择这个目录：`D:\项目\himiway\KOL回复训练\脚本\varla-kol-reply-assistant\chrome-extension`
+4. 选择这个目录：`C:/path/to/your-project`
 5. 打开 Instagram / TikTok / Meta Business Suite / Gmail 后，网页右侧会出现一个 `KOL` 小按钮。
 6. 点击 `KOL` 小按钮会动画展开右侧小界面；再次点击 Chrome 插件图标或面板里的 `×` 可以收起。
 7. 选中一段 KOL 文本，点面板里的 `读取`，再点 `生成 6 条回复`。

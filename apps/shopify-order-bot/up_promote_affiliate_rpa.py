@@ -37,8 +37,8 @@ UPPROMOTE_AFFILIATES_URL = (
 DESTINATION_URL = "https://varlascooter.com/collections/electric-dirt-bike"
 PROGRAM_NAME = "KOL - $100"
 COLLECTION_NAME = "Electric Dirt Bike"
-APP_TOKEN = "VZ58b0AKdaJNiAs3kc7cOOGZncc"
-TABLE_ID = "tblKwzo7QwvYhtjy"
+APP_TOKEN = "YOUR_FEISHU_RESOURCE_TOKEN"
+TABLE_ID = "YOUR_TABLE_ID"
 
 
 @dataclass(frozen=True)
