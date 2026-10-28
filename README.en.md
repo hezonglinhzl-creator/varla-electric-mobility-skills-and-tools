@@ -85,3 +85,5 @@ Public packages contain instructions, source, safe templates and required public
 ## Documentation reference
 
 The guide layout follows the feature/environment/install/usage/FAQ structure in [GitHub Hans](https://github.com/52cik/github-hans). That browser translation tool is a reference, not a bundled Varla component.
+
+[2026-10-28 package review and fixes](docs/release-notes-2026-10-28.md)

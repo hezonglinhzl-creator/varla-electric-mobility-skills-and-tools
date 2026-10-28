@@ -6,8 +6,10 @@
   "expected_gmail_account": "info@varlascooter.com",
   "credential_paths": {
     "note": "Path placeholders only. Store credential and token values in local files that are not committed.",
-    "gmail_oauth_client": "%LOCALAPPDATA%\\VarlaKOLCommandCenter\\credentials\\gmail-oauth-client.json",
-    "gmail_token": "%LOCALAPPDATA%\\VarlaKOLCommandCenter\\credentials\\gmail-token.json",
+    "gmail_oauth_client": "%LOCALAPPDATA%\\VarlaKOLCommandCenter\\gmail-credentials.json",
+    "gmail_token": "%LOCALAPPDATA%\\VarlaKOLCommandCenter\\gmail-token.json",
     "feishu_credentials": "%LOCALAPPDATA%\\VarlaKOLCommandCenter\\credentials\\feishu-credentials.json"
-  }
+  },
+  "enable_junk_cleanup": false,
+  "note": "Reference only, not auto-loaded. Use launch environment variables VARLA_KOL_DATA_DIR, VARLA_KOL_REPLY_ROOT, VARLA_KOL_EXPECTED_ACCOUNT and optional VARLA_ENABLE_JUNK_CLEANUP=true."
 }

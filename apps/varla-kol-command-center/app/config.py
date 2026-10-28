@@ -21,9 +21,11 @@ class AppConfig:
     bind_port: int = 8791
     feishu_check_hours: int = 72
     auto_mode: bool = False
+    enable_junk_cleanup: bool = False
     expected_gmail_account: str = "info@varlascooter.com"
-    reply_project_root: Path = Path(
-        "E:/himiway/KOL回复训练/脚本/varla-kol-reply-assistant"
+    reply_project_root: Path = (
+        Path(__file__).resolve().parents[2]
+        / "varla-kol-reply-program/program/varla-kol-reply-assistant"
     )
 
     @classmethod
@@ -40,7 +42,10 @@ class AppConfig:
         project_dir = Path(__file__).resolve().parents[1]
         return cls(
             project_dir=project_dir,
-            data_dir=Path(local_app_data_value) / "VarlaKOLCommandCenter",
+            data_dir=Path(os.environ.get("VARLA_KOL_DATA_DIR") or (Path(local_app_data_value) / "VarlaKOLCommandCenter")),
+            enable_junk_cleanup=os.environ.get("VARLA_ENABLE_JUNK_CLEANUP", "").strip().lower() == "true",
+            expected_gmail_account=os.environ.get("VARLA_KOL_EXPECTED_ACCOUNT", "info@varlascooter.com"),
+            reply_project_root=Path(os.environ.get("VARLA_KOL_REPLY_ROOT") or (project_dir.parent / "varla-kol-reply-program/program/varla-kol-reply-assistant")),
         )
 
     def ensure_runtime_dirs(self) -> None:

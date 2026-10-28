@@ -2271,7 +2271,15 @@ def build_production_services(
                 knowledge_root = candidate
         except (OSError, UnicodeError, json.JSONDecodeError, ValueError):
             pass
-    index.rebuild_from_directory(knowledge_root)
+    if knowledge_root.is_dir():
+        # Existing packages still require the complete manifest/hash checks.
+        index.rebuild_from_directory(knowledge_root)
+    else:
+        # Public distributions omit private business knowledge. Start a setup UI
+        # with an empty, unverified index rather than crashing or trusting a stale
+        # persisted index. ReplyEngine will require manual review with no sources.
+        index = KnowledgeIndex(sqlite3.connect(":memory:", check_same_thread=False))
+        index.initialize()
     knowledge_lock = threading.RLock()
     reply_seed = (
         Path(catalog_seed_directory)

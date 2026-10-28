@@ -3,6 +3,22 @@ name: kol建联数据表格skill
 description: 维护 Varla KOL 建联 XLSX 台账，记录和核对 Instagram、TikTok、YouTube 创作者主页、粉丝/订阅数、近期视频平均播放、联系方式和建联状态。用户提到 KOL 建联数据表、达人台账、记录当前 KOL、补充粉丝或平均播放、核查建联表时使用。
 ---
 
+## Portable distribution paths / 完整包程序位置
+
+Before running a program, read `PACKAGE-LOCATION.json` beside this installed SKILL.md.
+Its `apps` object maps each bundled program name to the real extracted directory;
+`package_root` points to the complete bundle. Use those paths first. Absolute paths
+in older examples below are historical examples, not automatic defaults.
+If this file is missing or the bundle was moved, rerun the complete project's
+install.ps1 to refresh the mapping. Keep the extracted program directory.
+Never treat YOUR_* placeholders as configured credentials or resource IDs.
+
+运行程序前先读取本 SKILL.md 旁边的 `PACKAGE-LOCATION.json`：`apps` 是实际程序目录，
+`package_root` 是完整包位置。下文旧电脑绝对路径只作为历史示例，不能自动照用。
+缺少映射或完整包搬家后，重新运行完整包 install.ps1；保留解压后的程序目录。
+YOUR_* 占位符不代表已配置账号或资源；真实写入前必须使用自己的授权和目标链接。
+
+
 # KOL 建联数据表格
 
 用于维护本地 `varla_kol_tracker.xlsx` 建联台账。收集对象是创作者账号主页及公开资料；不要与飞书视频分析表、爆款视频库或邮件总控混用。

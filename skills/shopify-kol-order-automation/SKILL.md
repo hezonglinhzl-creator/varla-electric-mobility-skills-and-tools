@@ -3,6 +3,22 @@ name: shopify-kol-order-automation
 description: Operate the existing Varla Shopify KOL/KOC order workflow from contracts, screenshots, Word, PDF, or Excel through address verification, AdsPower/Playwright browser entry, paid order creation, and #VARLA writeback. Use this skill whenever the user asks to 整理KOL发货资料, Shopify自动发货, 创建KOL订单, 校对美国收货地址, 批量逐单发货, 重发取消订单, or save Shopify/VARLA results to XLSX. Always use it for the Varla `shopify_order_bot` workflow even when the request is brief such as “开始发货” or “写入表格”.
 ---
 
+## Portable distribution paths / 完整包程序位置
+
+Before running a program, read `PACKAGE-LOCATION.json` beside this installed SKILL.md.
+Its `apps` object maps each bundled program name to the real extracted directory;
+`package_root` points to the complete bundle. Use those paths first. Absolute paths
+in older examples below are historical examples, not automatic defaults.
+If this file is missing or the bundle was moved, rerun the complete project's
+install.ps1 to refresh the mapping. Keep the extracted program directory.
+Never treat YOUR_* placeholders as configured credentials or resource IDs.
+
+运行程序前先读取本 SKILL.md 旁边的 `PACKAGE-LOCATION.json`：`apps` 是实际程序目录，
+`package_root` 是完整包位置。下文旧电脑绝对路径只作为历史示例，不能自动照用。
+缺少映射或完整包搬家后，重新运行完整包 install.ps1；保留解压后的程序目录。
+YOUR_* 占位符不代表已配置账号或资源；真实写入前必须使用自己的授权和目标链接。
+
+
 # shopify自动发货
 
 Use the existing project at:

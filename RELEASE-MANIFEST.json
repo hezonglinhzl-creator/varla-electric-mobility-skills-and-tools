@@ -10,7 +10,7 @@
       "unified-collector-extension"
     ],
     "zip": "skill-kol-video-monitor.zip",
-    "sha256": "db62e15a4d3a57ae16363efba2bb9412a2bbff1e2f37e68dadabe59b33996b64"
+    "sha256": "744fbfe53f287f90299e567f836746d24a180b4c5ab91da75d33076a26307f40"
   },
   {
     "kind": "skill",
@@ -18,7 +18,7 @@
     "repo": "skill-ecommerce-ugc-workflow",
     "paired_apps": [],
     "zip": "skill-ecommerce-ugc-workflow.zip",
-    "sha256": "fdf1f74eeff0a38965aae429deb6c148787a6852c73219f1156ac594bbf6d5db"
+    "sha256": "78eceb4f58d1b72feef5eadd9c1bbda84499f1d495b1e977474fdd14fa949b04"
   },
   {
     "kind": "skill",
@@ -26,7 +26,7 @@
     "repo": "skill-emoto-hotspot-agent",
     "paired_apps": [],
     "zip": "skill-emoto-hotspot-agent.zip",
-    "sha256": "b4c4d1413e08fd0b1ab20ae1ba597b865298b7dff005a8ffab15d36677bc8b0a"
+    "sha256": "7a3055eed87315f5f408d8bbbf015a890d5ee65134949cf058823004dc163120"
   },
   {
     "kind": "skill",
@@ -36,7 +36,7 @@
       "electric-moto-ai-workflow"
     ],
     "zip": "skill-emoto-ugc-story-director.zip",
-    "sha256": "9f7179b9caed63008bb09d72bfa54f66e5704b3d87911c4b29584a1409909f6a"
+    "sha256": "7f8b1779c97c647e8d155e4992e3421b39fe5f80538c14258c62a80d6c10762b"
   },
   {
     "kind": "skill",
@@ -46,7 +46,7 @@
       "feishu-codex-local"
     ],
     "zip": "skill-feishu-codex-local.zip",
-    "sha256": "b544b34c22a99a5fdb7ac1a99ae99b2ea9a338cf1755fc1922200c20dc325485"
+    "sha256": "8ac403d93fde01d63d05d94ac2978164a7eafa7503fbed7866144994e995b7e0"
   },
   {
     "kind": "skill",
@@ -56,7 +56,7 @@
       "dreamina-image2video"
     ],
     "zip": "skill-image2-motion-agent.zip",
-    "sha256": "4e991281c4f22f16c8cb9a2b03bace69e33f98151f5b9e397eeb5cbb59cadb38"
+    "sha256": "8962fa28608c2a4518b82c7a957f469e96340b4c883edb18003ebdfb4d11fb8c"
   },
   {
     "kind": "skill",
@@ -64,7 +64,7 @@
     "repo": "skill-kol-feishu-plan-builder",
     "paired_apps": [],
     "zip": "skill-kol-feishu-plan-builder.zip",
-    "sha256": "72b439da83013d87ce90e8e27fad2d021e43d6094d6df941a9e3eb040a9c4700"
+    "sha256": "91465d23207bff265b0e113974417acf7f37bb3133b1f0623ece6c1462e76a66"
   },
   {
     "kind": "skill",
@@ -75,7 +75,7 @@
       "kol-recorder-extension"
     ],
     "zip": "skill-kol-outreach-spreadsheet.zip",
-    "sha256": "15d21dffeb78a8bf1f7a4ba0df69df466daed4bf9092540184cbab5845cdb1a1"
+    "sha256": "724c865e133c38aa5891acc0250664284a25cbd7e0915a30d16932468982cf09"
   },
   {
     "kind": "skill",
@@ -85,7 +85,7 @@
       "varla-social-publisher"
     ],
     "zip": "skill-meta-auto-reply-skill.zip",
-    "sha256": "37f921746403e32e79cd3be72b95a65c3eff9202862976c304e24cfe2a245447"
+    "sha256": "cf91d5b8d1e2bcbc5e736c0c482cbb75bd0ce3c5a3e000315864222953f5538e"
   },
   {
     "kind": "skill",
@@ -95,7 +95,7 @@
       "shopify-order-bot"
     ],
     "zip": "skill-shopify-kol-order-automation.zip",
-    "sha256": "f90605339738184c7529e15d9c247a752c01f9fbfb040fd18a0ea729c09f98f7"
+    "sha256": "f4005d927dbe8034910b6ca6500f6cc4570b85a986f83e759cc454aa902b04e6"
   },
   {
     "kind": "skill",
@@ -103,7 +103,7 @@
     "repo": "skill-tiktok-pov-product-seeding",
     "paired_apps": [],
     "zip": "skill-tiktok-pov-product-seeding.zip",
-    "sha256": "496660e01d3cd77a7db4ccb5cfb7275ee6374b2f69a5a50bcef892958d4bb50e"
+    "sha256": "0ec5ea361c2ea7d727113c3e49d9450f5330944a44281815c54b8cfa980a2e58"
   },
   {
     "kind": "skill",
@@ -113,7 +113,7 @@
       "varla-kol-command-center"
     ],
     "zip": "skill-varla-gmail-automation.zip",
-    "sha256": "2e9e6b397449133a50fba625fc779d92eab570286864aefb9eb7bb35ffb82019"
+    "sha256": "9f41c970610aa9d1a07141be05e9a95c58dce3c1e431834aabea9e694f3202e1"
   },
   {
     "kind": "skill",
@@ -123,7 +123,7 @@
       "varla-kol-command-center"
     ],
     "zip": "skill-varla-kol-command-center.zip",
-    "sha256": "342534e8aaabdea40d838ec8f74005e5ce3352d410e40f194b216f16c1516993"
+    "sha256": "318abf74371ba7191be45de5d38df7fc24844681ed5a1bca5bd866f52e7b54d3"
   },
   {
     "kind": "skill",
@@ -131,7 +131,7 @@
     "repo": "skill-varla-kol-contract-updater",
     "paired_apps": [],
     "zip": "skill-varla-kol-contract-updater.zip",
-    "sha256": "f850815ad11bf8ffb5bf5142c23376975309443691be037cb80f4584b03744d5"
+    "sha256": "ba775fef325823df207d9a545ca0d040dfe0382445b72db1781a9ca2e2fa718e"
   },
   {
     "kind": "skill",
@@ -142,7 +142,7 @@
       "shopify-order-bot"
     ],
     "zip": "skill-varla-kol-feishu-order-writeback-skill.zip",
-    "sha256": "2bd2d2edc31c6f2f784d3938743739dc2a405cb3eca559a7a2affbd68ba1cfc0"
+    "sha256": "4b93d40d8ab3f882b02f6e6d185c1b288c488d25e51dfeb290c075c47d5e15a3"
   },
   {
     "kind": "skill",
@@ -153,7 +153,7 @@
       "varla-kol-command-center"
     ],
     "zip": "skill-varla-kol-reply-assistant.zip",
-    "sha256": "b767f5209a6a4d29f2c985ec04684d76580e9cb83f82999fab28d9c84b5baaa7"
+    "sha256": "be8d703f7719c5b8b42e8098b9753cf2bf03d9dcdebb59c6f889f2ba79cd9b4e"
   },
   {
     "kind": "skill",
@@ -163,7 +163,7 @@
       "shopify-order-bot"
     ],
     "zip": "skill-varla-uppromote-affiliate-automation.zip",
-    "sha256": "c7b379889dd2a52f7adf7f0bc85a71b89946a51922f678c6efaa118155d7c1af"
+    "sha256": "0a90a203ccd095628a6bdc74c69462c94e3e57cccc0057225962cc76ac0ef3a1"
   },
   {
     "kind": "skill",
@@ -173,7 +173,7 @@
       "video-storyboard-tool"
     ],
     "zip": "skill-viral-product-video-replicator.zip",
-    "sha256": "057384393fa869148640d45a8e998017adb76c5ead9de211b142b1d50c1eb630"
+    "sha256": "1c78398b3d0479929c7253162300db67a02e8b6537f69eed1cb71db129e64a4c"
   },
   {
     "kind": "skill",
@@ -183,7 +183,7 @@
       "varla-weekly-report"
     ],
     "zip": "skill-varla-weekly-report.zip",
-    "sha256": "c1603360880b9b454199fa050d572315d4f537ae1da9a7fc51b436693da16f58"
+    "sha256": "6b349dcd369b72ac6196c21ff9ec60865b757c36c4827b89e787146d64f35ae1"
   },
   {
     "kind": "skill",
@@ -191,7 +191,7 @@
     "repo": "skill-varla-social-insights-monitor",
     "paired_apps": [],
     "zip": "skill-varla-social-insights-monitor.zip",
-    "sha256": "20ffdb9154402a31f5231c6b5cb667009308b04eadc3c62494e9ee50517f9df6"
+    "sha256": "11fa8cde25dcbe06db18e82d7151b7e56194ed90d01bf463269c61634463b9de"
   },
   {
     "kind": "app",
@@ -199,7 +199,7 @@
     "repo": "app-dreamina-image2video",
     "paired_apps": [],
     "zip": "app-dreamina-image2video.zip",
-    "sha256": "471b912d5b6f490f2381980e02570eaa12ba72fafe8e2590bf74d03070c9b667"
+    "sha256": "ad6dc5de35a2dde78dad7cb76070752d652c86257cbf78d96fe29789d406d682"
   },
   {
     "kind": "app",
@@ -207,7 +207,7 @@
     "repo": "app-electric-moto-ai-workflow",
     "paired_apps": [],
     "zip": "app-electric-moto-ai-workflow.zip",
-    "sha256": "69f46f871d678f0d08a0a047745d390b49c289e6d1965a68b2880edf60fcd619"
+    "sha256": "b47c748197b5b142807bd60d29a051d4eeab00667e93c9e7be67aba47db8bcf8"
   },
   {
     "kind": "app",
@@ -215,7 +215,7 @@
     "repo": "app-feishu-codex-local",
     "paired_apps": [],
     "zip": "app-feishu-codex-local.zip",
-    "sha256": "d198192b1024616deaaeb9c1690d54e004bf1da125288249e155659231432591"
+    "sha256": "39d7ac44cb64dac3666dbcdfa5333fa27074318c3d54a29d8cbc6fb743b1fd74"
   },
   {
     "kind": "app",
@@ -223,7 +223,7 @@
     "repo": "app-kol-recorder-extension",
     "paired_apps": [],
     "zip": "app-kol-recorder-extension.zip",
-    "sha256": "043c20212ea6fb871982edfb3c6e50a13b3441e1a84c00402c865994ad7c6e1d"
+    "sha256": "e8cd2cd63c22c621534f67a1d986c3cbdefccae4a6263ee740754bc4370129ce"
   },
   {
     "kind": "app",
@@ -231,7 +231,7 @@
     "repo": "app-shopify-order-bot",
     "paired_apps": [],
     "zip": "app-shopify-order-bot.zip",
-    "sha256": "4bf7100cdf6eab2c1ddb1b6dab1b9505a8ea8d23cb50e34f16cedfa5cec1968d"
+    "sha256": "e0c4aa9484114a768335b66d5afe6b2023ad1b09a7d66bfe9084a0e647f38611"
   },
   {
     "kind": "app",
@@ -239,7 +239,7 @@
     "repo": "app-unified-collector-extension",
     "paired_apps": [],
     "zip": "app-unified-collector-extension.zip",
-    "sha256": "29900c5c53d5138ff0a17e738b3d1d34d960230e5959563eeddf89d5317a2f40"
+    "sha256": "06c520b1ac33de9f48c58431f6409c50f3bf096efe31cb870a8366fb33c3e60c"
   },
   {
     "kind": "app",
@@ -247,7 +247,7 @@
     "repo": "app-varla-instagram-monitor",
     "paired_apps": [],
     "zip": "app-varla-instagram-monitor.zip",
-    "sha256": "40a35514893d4b4df41f35ea76473c7b397cec6d350214d4180f83cd7c21f55a"
+    "sha256": "e24a8a369abaa8a00de333172bfe417514d6464f19b2dd740c611850b9d0ec35"
   },
   {
     "kind": "app",
@@ -255,7 +255,7 @@
     "repo": "app-varla-kol-collector",
     "paired_apps": [],
     "zip": "app-varla-kol-collector.zip",
-    "sha256": "6747c0776aca79c52e15ac811d800cc81acb9d53d00786f12c62abb59ce65792"
+    "sha256": "bc0fd250f164dde3db8b43cf0e41af27c27b07d65c16f94c67505d0ee287e618"
   },
   {
     "kind": "app",
@@ -263,7 +263,7 @@
     "repo": "app-varla-kol-command-center",
     "paired_apps": [],
     "zip": "app-varla-kol-command-center.zip",
-    "sha256": "012d718d3c365c0c65c447650683bcefcc799e2141027485a7c07b5090398b11"
+    "sha256": "d718cefc8a853710766895293f9b038b8974610cb3d3b8f5e367cf5084853539"
   },
   {
     "kind": "app",
@@ -271,7 +271,7 @@
     "repo": "app-varla-kol-reply-program",
     "paired_apps": [],
     "zip": "app-varla-kol-reply-program.zip",
-    "sha256": "f035a4ce2bbf484b8a15b8a55a093384657adc30bc5a07832ad1ebb4b0aefdfe"
+    "sha256": "8f6c40b8dfca815797c1b0b7275dfa0f5ed82b8ab0ef74d62c7bc796c71f5855"
   },
   {
     "kind": "app",
@@ -279,7 +279,7 @@
     "repo": "app-varla-social-publisher",
     "paired_apps": [],
     "zip": "app-varla-social-publisher.zip",
-    "sha256": "17b78fd0b599006eea6f1ef6145084bc5872a5018a3388e917641717958ca089"
+    "sha256": "73dd8b274c3111b113a0fddd9bf11c09916057621d04a6074dc86bf770b0a285"
   },
   {
     "kind": "app",
@@ -287,7 +287,7 @@
     "repo": "app-varla-weekly-report",
     "paired_apps": [],
     "zip": "app-varla-weekly-report.zip",
-    "sha256": "9b11b32a31d4d1dd7f3b84ea37981af98f1e7eb08be4192365146b1db448c392"
+    "sha256": "33f867266d6f50a960dad23d2166c458aa0a197ed96c3b9a4540fc1aff5c8882"
   },
   {
     "kind": "app",
@@ -295,7 +295,7 @@
     "repo": "app-video-score-analyzer",
     "paired_apps": [],
     "zip": "app-video-score-analyzer.zip",
-    "sha256": "897771add7584012dafbc009ff71788527486411447e6871899784bb10521c3e"
+    "sha256": "1e771f1cde321cdf5899dd53f820e59bc90c9bbaa25880c2c8273105ab73521f"
   },
   {
     "kind": "app",
@@ -303,7 +303,7 @@
     "repo": "app-video-storyboard-tool",
     "paired_apps": [],
     "zip": "app-video-storyboard-tool.zip",
-    "sha256": "1fecb92a167bdf189b128ac8126960f79ab4e29c3a9f589675cc7b412bba9b3c"
+    "sha256": "651b7fb09e2be24279d71cc7753cf6ac44c636a94303d0ecd571f84397000fc2"
   },
   {
     "kind": "app",
@@ -311,6 +311,6 @@
     "repo": "app-viral-video-finder-extension",
     "paired_apps": [],
     "zip": "app-viral-video-finder-extension.zip",
-    "sha256": "0b99e9cb44287e9e0d42a4f86c8fd1f21768f3c390da4cd07c00480713fff862"
+    "sha256": "3618fce19c19b48b43450ad058b9792e5c88c31e64220dbff9da8589c88df0e2"
   }
 ]

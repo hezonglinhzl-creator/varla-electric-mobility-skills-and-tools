@@ -3,6 +3,22 @@ name: varla-uppromote-affiliate-automation
 description: Create and manage Varla UpPromote affiliates from a supplied creator webpage or Feishu Base page. Locate each creator record and its name, email, code name, and code link; create or verify the KOL-$100 affiliate, coupon, custom path, and Electric Dirt Bike short link; write back and reread Feishu before drafting or explicitly sending the creator email. Use whenever a user gives one or more KOL/Feishu records and asks to create UpPromote codes, generate links, synchronize Feishu, or email affiliate information.
 ---
 
+## Portable distribution paths / 完整包程序位置
+
+Before running a program, read `PACKAGE-LOCATION.json` beside this installed SKILL.md.
+Its `apps` object maps each bundled program name to the real extracted directory;
+`package_root` points to the complete bundle. Use those paths first. Absolute paths
+in older examples below are historical examples, not automatic defaults.
+If this file is missing or the bundle was moved, rerun the complete project's
+install.ps1 to refresh the mapping. Keep the extracted program directory.
+Never treat YOUR_* placeholders as configured credentials or resource IDs.
+
+运行程序前先读取本 SKILL.md 旁边的 `PACKAGE-LOCATION.json`：`apps` 是实际程序目录，
+`package_root` 是完整包位置。下文旧电脑绝对路径只作为历史示例，不能自动照用。
+缺少映射或完整包搬家后，重新运行完整包 install.ps1；保留解压后的程序目录。
+YOUR_* 占位符不代表已配置账号或资源；真实写入前必须使用自己的授权和目标链接。
+
+
 # Varla UpPromote Affiliate Automation
 
 Create one creator's affiliate setup end-to-end without duplicating records or sending from the wrong mailbox.

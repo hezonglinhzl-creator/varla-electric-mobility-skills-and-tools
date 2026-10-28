@@ -878,7 +878,7 @@ def create_app(
     @asynccontextmanager
     async def lifespan(_app: FastAPI):
         nonlocal cleanup_thread
-        if not testing and hasattr(services.recognition, "cleanup_junk"):
+        if config.enable_junk_cleanup and not testing and hasattr(services.recognition, "cleanup_junk"):
             cleanup_thread = threading.Thread(
                 target=junk_cleanup_loop,
                 name="varla-junk-cleanup",
@@ -900,7 +900,7 @@ def create_app(
     )
     app.state.testing = bool(testing)
     app.state.config = config
-    app.state.last_junk_cleanup = {"status": "starting"}
+    app.state.last_junk_cleanup = {"status": "starting" if config.enable_junk_cleanup and not testing else "disabled"}
     launch_service = service_launcher or (
         lambda target: open_local_target(config, target)
     )
@@ -1018,7 +1018,8 @@ def create_app(
             "local_only": True,
             "manual_mode": True,
             "auto_mode": False,
-            "junk_cleanup_enabled": not app.state.testing,
+            "junk_cleanup_enabled": config.enable_junk_cleanup and not app.state.testing,
+            "knowledge_state": "check_required" if (config.project_dir / "knowledge" / "manifest.json").is_file() or (config.data_dir / "feishu-sync-state.json").is_file() else "not_configured",
             "junk_cleanup_interval_seconds": junk_cleanup_interval_seconds,
             "junk_cleanup": _safe_value(app.state.last_junk_cleanup),
             "paused": paused,

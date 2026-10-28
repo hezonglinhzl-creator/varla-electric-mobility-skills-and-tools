@@ -38,7 +38,7 @@ Local URL: `http://127.0.0.1:8766`
 
 [Full program / browser-extension guide](../../apps/varla-kol-collector/README.en.md)
 
-No real contacts or result workbooks are preloaded; initialize your own tracker first.
+No real contacts or result workbooks are preloaded; initialize your own tracker first. Collection alone defaults to not-contacted; contacted status must be explicit.
 
 ### KOL Recorder Chrome Extension (`kol-recorder-extension`)
 
@@ -55,7 +55,7 @@ Local URL: `http://127.0.0.1:8765`
 
 [Full program / browser-extension guide](../../apps/kol-recorder-extension/README.en.md)
 
-Use only visible page data; hidden emails and unavailable metrics remain blank.
+Use only visible page data; hidden emails and unavailable metrics remain blank. Collection alone defaults to not-contacted; contacted status must be explicit.
 
 ## 3. First task
 

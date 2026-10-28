@@ -3,6 +3,22 @@ name: emoto-ugc-story-director
 description: Use this skill whenever the user asks for 电摩、电动越野车、e-bike、VARLA M7S 的欧美真人 UGC 剧情、Google Omni 视频提示词、人物三视图、首帧、双段短视频、家庭礼物反转、恋爱喜剧、狗血剧情、围观反应、强表情、小动作、多镜头、镜头移动衔接、TikTok 或 Instagram 发布文案。即使用户只说“再来一个剧情”“按之前那样”“表情丰富一点”“给我两个10秒”，也应触发。输出以真实 Apple iPhone 手机质感、准确产品图强绑定、清晰两秒时间块、夸张但真人化的表演、多镜头自然衔接和对白说话者锁定为核心。
 ---
 
+## Portable distribution paths / 完整包程序位置
+
+Before running a program, read `PACKAGE-LOCATION.json` beside this installed SKILL.md.
+Its `apps` object maps each bundled program name to the real extracted directory;
+`package_root` points to the complete bundle. Use those paths first. Absolute paths
+in older examples below are historical examples, not automatic defaults.
+If this file is missing or the bundle was moved, rerun the complete project's
+install.ps1 to refresh the mapping. Keep the extracted program directory.
+Never treat YOUR_* placeholders as configured credentials or resource IDs.
+
+运行程序前先读取本 SKILL.md 旁边的 `PACKAGE-LOCATION.json`：`apps` 是实际程序目录，
+`package_root` 是完整包位置。下文旧电脑绝对路径只作为历史示例，不能自动照用。
+缺少映射或完整包搬家后，重新运行完整包 install.ps1；保留解压后的程序目录。
+YOUR_* 占位符不代表已配置账号或资源；真实写入前必须使用自己的授权和目标链接。
+
+
 # 电摩 UGC 剧情导演
 
 把用户的剧情想法和产品图片整理成可以直接用于 Google Omni 等视频模型的完整中文生产包。默认写清楚人物资产、场景、首帧、分段视频提示词和社媒文案，而不是只给剧情梗概。

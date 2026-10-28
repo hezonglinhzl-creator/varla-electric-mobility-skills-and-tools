@@ -25,7 +25,7 @@ Windows、Python 3.11+；Gmail/回复/合同/飞书组件需各自配置。
 
 先进入 `../../apps/varla-kol-command-center`。本地 WebUI、四类邮件路由、知识检索、回复预览、人工确认与暂停。
 
-1. 先读本目录 `README_使用说明.md`，配置自己的 Gmail 授权和外部组件位置。
+1. 先配置可选环境变量 VARLA_KOL_DATA_DIR（数据目录）、VARLA_KOL_REPLY_ROOT（回复程序路径）和 VARLA_KOL_EXPECTED_ACCOUNT（核验邮箱），再准备自己的 Gmail 授权。默认数据目录为 %LOCALAPPDATA%/VarlaKOLCommandCenter。
 2. 原一键入口是 `START_KOL_COMMAND_CENTER.bat`；它依赖本机 Codex 捆绑 Python，不存在时用下面的手动方式。
 3. 手动：在本目录运行 `python -m venv .venv`，再运行 `.\.venv\Scripts\python.exe -m pip install -r requirements.lock`。
 4. 运行 `.\.venv\Scripts\python.exe -m uvicorn app.main:app --host 127.0.0.1 --port 8791`。
@@ -35,7 +35,7 @@ Windows、Python 3.11+；Gmail/回复/合同/飞书组件需各自配置。
 
 [查看完整程序与浏览器插件安装说明](../../apps/varla-kol-command-center/README.md)
 
-识别中包含受限的营销垃圾邮件处理，可能修改邮箱；先读详细规则。迁移时要检查 app/config.py 等文件中的组件路径；app/web/app.js 的 your-workspace 飞书域名占位符需换为自己的域名，才能打开相应资源链接。
+公开分发版后台垃圾邮件清理默认关闭；仅设置 VARLA_ENABLE_JUNK_CLEANUP=true 才启动定时线程。识别/手动清理按钮仍可能修改邮箱。config.example.json 仅供参考，程序读取启动环境变量；Gmail OAuth 文件实际位于数据根目录 gmail-credentials.json 与 gmail-token.json。未提供业务知识时可打开设置界面，但回复必须转人工。
 
 ## 3. 第一次怎么用
 

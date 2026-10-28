@@ -25,17 +25,16 @@ Node.js 22、npm、Redis；Docker 可提供 Redis/MinIO，FFmpeg 用于媒体。
 
 先进入 `../../apps/varla-social-publisher`。本地仪表板、任务验证、BullMQ Worker 和 Mock adapter。
 
-1. 在本目录打开 PowerShell，运行 `Copy-Item .env.example .env`，自行填写本地密钥，保持 `MOCK_PUBLISHING=true`。
-2. 运行 `npm install`，随后 `npm run db:generate` 和 `npm run db:push`。
-3. 启动自己的 Redis，确认 `.env` 中 REDIS_URL 正确，然后运行 `npm run dev`。
-4. 第二个终端运行 `$env:RUN_WORKER='true'; $env:MOCK_PUBLISHING='true'; $env:REDIS_URL='redis://127.0.0.1:6379'; npm run worker`。
-5. 打开仪表板，只做模拟任务。健康检查显示依赖未就绪时先检查数据库、Redis、存储和 Worker。
+1. 安装系统 Node.js 22+，在当前程序目录运行 npm install。
+2. 双击 START_VARLA.bat，只打开静态仪表板；也可运行 powershell -File tools/start_varla.ps1 -CheckOnly 只检查，不启动。
+3. 默认不启动 Redis 或 Worker。需要调试 Mock Worker 时另行准备自己的 Redis，并按开发文档显式配置 RUN_WORKER、MOCK_PUBLISHING 和 REDIS_URL。
+4. 页面尚不能完成上传、审核和排期。/api/health 是固定 503 占位接口，不能据此判断真实依赖状态。
 
 本地地址：`http://127.0.0.1:3000`
 
 [查看完整程序与浏览器插件安装说明](../../apps/varla-social-publisher/README.md)
 
-源码明确拒绝未配置的真实平台 adapter。Meta/TikTok 发布、OAuth、审核和外部媒体 URL 尚需集成，不能把 Mock 成功当成真实发布。
+一键入口仅打开仪表板，使用系统 Node.js 22+ 和 npm 依赖，不会自动启动 Worker。可用 `powershell -File tools/start_varla.ps1 -CheckOnly` 检查。真实平台 adapter、OAuth、发布审核和上传/排期闭环仍未实现。
 
 ## 3. 第一次怎么用
 

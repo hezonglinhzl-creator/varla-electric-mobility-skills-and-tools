@@ -85,3 +85,5 @@
 ## 排版参考
 
 说明结构参考 [GitHub 汉化插件](https://github.com/52cik/github-hans)的功能、环境、安装、使用和常见问题写法。该汉化工具只是文档参考，不是 Varla 包内组件。
+
+[2026-10-28 安装包检查与修复记录](docs/release-notes-2026-10-28.md)

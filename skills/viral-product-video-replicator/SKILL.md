@@ -3,6 +3,22 @@ name: viral-product-video-replicator
 description: Use when the user provides benchmark videos, product materials, product links, images, scripts, subtitles, or asks to 脚本拆解、本地视频拆镜头、批量视频拆分、同步飞书原生表格、拆解爆款、复刻产品视频、替换产品、生成分镜、生成香蕉图片提示词、生成即梦提示词、拆分即梦短提示词、生成欧美真人感人物、制作电摩原生 UGC 剧情、沉淀人物参数、生成 TikTok/INS 文案。Outputs evidence-based concise storyboard breakdowns, local multi-video processing and Feishu-native-table handoff, localized copy analysis, product-substitution scripts, realistic character assets, electric-motorcycle UGC story prompts, Banana storyboard prompts, Jimeng image-to-video prompts, short prompt segments under tool limits, ordered sound design notes, and social post copy.
 ---
 
+## Portable distribution paths / 完整包程序位置
+
+Before running a program, read `PACKAGE-LOCATION.json` beside this installed SKILL.md.
+Its `apps` object maps each bundled program name to the real extracted directory;
+`package_root` points to the complete bundle. Use those paths first. Absolute paths
+in older examples below are historical examples, not automatic defaults.
+If this file is missing or the bundle was moved, rerun the complete project's
+install.ps1 to refresh the mapping. Keep the extracted program directory.
+Never treat YOUR_* placeholders as configured credentials or resource IDs.
+
+运行程序前先读取本 SKILL.md 旁边的 `PACKAGE-LOCATION.json`：`apps` 是实际程序目录，
+`package_root` 是完整包位置。下文旧电脑绝对路径只作为历史示例，不能自动照用。
+缺少映射或完整包搬家后，重新运行完整包 install.ps1；保留解压后的程序目录。
+YOUR_* 占位符不代表已配置账号或资源；真实写入前必须使用自己的授权和目标链接。
+
+
 # Viral Product Video Replicator
 
 ## Core Workflow
